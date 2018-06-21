@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\SystemHelper.cs" />
     <Compile Include="Models\Intersection.cs" />
     <Compile Include="Models\Point1.cs" />
     <Compile Include="Models\Point2.cs" />

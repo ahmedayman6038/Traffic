@@ -6,9 +6,11 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using MetroFramework;
 using MetroFramework.Forms;
 using Traffic.Models;
 
@@ -21,14 +23,7 @@ namespace Traffic
         {
             InitializeComponent();
             db = new TrafficContext();
-            Point1 point = new Point1();
-            point.index = 1;
-            point.lat = 15.66555;
-            point.lon = -455.5554;
-            point.elev = 66;
-            db.points1.Add(point);
-            db.SaveChanges();
-            
+            operationLabel.Text = "";
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -40,36 +35,103 @@ namespace Traffic
         private void metroTile3_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
-            file.InitialDirectory = "c:\\";
-            file.Filter = "Xml files (*.xml)|*.xml";
+            //file.InitialDirectory = "c:\\";
+            file.Filter = "Allowed Extension|*.xml;*.gpx";
             file.FilterIndex = 2;
             file.RestoreDirectory = true;
             DialogResult result = file.ShowDialog();
             if (result == DialogResult.OK)
             {
+                Reading:
                 try
                 {
+                    progress.Value = 0;
+                    operationLabel.Text = "Reading Data...";
+                    operationLabel.Refresh();
                     XmlDocument xmldoc = new XmlDocument();
                     XmlNodeList xmlnode;
-                    int i = 0;
-                    string str = null;
                     FileStream fs = new FileStream(file.FileName, FileMode.Open, FileAccess.Read);
+                    double lon, lat, elev;
+                    string name;
+                    Point1 pc1 = null;
+                    Point2 pc2 = null;
                     xmldoc.Load(fs);
                     xmlnode = xmldoc.GetElementsByTagName("wpt");
-                    for (i = 0; i <= xmlnode.Count - 1; i++)
+                    int records = xmlnode.Count;
+                    progress.Maximum = records;
+                    bool ignore = false;
+                    for (int i = 0; i < records; i++)
                     {
-                        xmlnode[i].ChildNodes.Item(0).InnerText.Trim();
-                        str = xmlnode[i].Attributes["lon"].Value + "  " + xmlnode[i].Attributes["lat"].Value + "  " + xmlnode[i].ChildNodes.Item(0).InnerText.Trim() + "  " + xmlnode[i].ChildNodes.Item(1).InnerText.Trim();
-                        MessageBox.Show(str);
+                        lon = Double.Parse(xmlnode[i].Attributes["lon"].Value);
+                        lat = Double.Parse(xmlnode[i].Attributes["lat"].Value);
+                        elev = Double.Parse(xmlnode[i].ChildNodes.Item(0).InnerText.Trim());
+                        name = String.Format("{0}-{1:d4}", xmlnode[i].ChildNodes.Item(1).InnerText.Trim().ToString(), (DateTime.Now.Ticks / 10) % 10000);
+                        pc1 = db.points1.Where(p => p.lon == lon && p.lat == lat).FirstOrDefault();
+                        if(i == records - 1)
+                        {
+                            pc2 = db.points2.Where(p => p.lon == lon && p.lat == lat).FirstOrDefault();
+                        }
+                        if(pc1 != null || pc2 != null)
+                        {
+                            if(!ignore)
+                            {
+                                DialogResult dr = MetroMessageBox.Show(this, "This point exist before, Do you want to ignore all the exist points? ", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dr == DialogResult.Yes)
+                                {
+                                    ignore = true;
+                                }
+                            }
+                            progress.Value += 1;
+                            progress.Refresh();
+                            operationLabel.Text = "Ignored Record " + (i + 1).ToString() + "...";
+                            operationLabel.Refresh();
+                            continue;
+                        }
+                        Point1 point1 = new Point1();
+                        point1.lon = lon;
+                        point1.lat = lat;
+                        point1.elev = elev;
+                        point1.name = name;
+                        Point2 point2 = new Point2();
+                        point2.lon = lon;
+                        point2.lat = lat;
+                        point2.elev = elev;
+                        point2.name = name;
+                        if (i == 0)
+                        {
+                            db.points1.Add(point1);
+                        }
+                        else if(i == records-1)
+                        {
+                            db.points2.Add(point2);
+                        }
+                        else
+                        {
+                            db.points1.Add(point1);
+                            db.points2.Add(point2);
+                        }
+                        db.SaveChanges();
+                        progress.Value += 1;
+                        progress.Refresh();
+                        operationLabel.Text = "Adding Record " + (i + 1).ToString() + "...";
+                        operationLabel.Refresh();
                     }
-
+                    operationLabel.Text = "Done.";
+                    operationLabel.Refresh();
                 }
-
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    DialogResult dr = MetroMessageBox.Show(this, "Could not read file from disk. Original error: " + ex.Message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    if (dr == DialogResult.Retry)
+                    {
+                        goto Reading;
+                    }
+                    if (dr == DialogResult.Cancel)
+                    {
+                        progress.Value = 0;
+                        operationLabel.Text = "";
+                    }
                 }
-
             }
         }
         
