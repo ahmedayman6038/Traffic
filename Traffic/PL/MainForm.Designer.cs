@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.operationLabel = new MetroFramework.Controls.MetroLabel();
+            this.progress = new MetroFramework.Controls.MetroProgressBar();
             this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
@@ -42,8 +42,8 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.metroPanel1.Controls.Add(this.metroLabel1);
-            this.metroPanel1.Controls.Add(this.metroProgressBar1);
+            this.metroPanel1.Controls.Add(this.operationLabel);
+            this.metroPanel1.Controls.Add(this.progress);
             this.metroPanel1.Controls.Add(this.metroRadioButton1);
             this.metroPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
@@ -59,6 +59,27 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // operationLabel
+            // 
+            this.operationLabel.AutoSize = true;
+            this.operationLabel.ForeColor = System.Drawing.Color.White;
+            this.operationLabel.Location = new System.Drawing.Point(315, 1);
+            this.operationLabel.Name = "operationLabel";
+            this.operationLabel.Size = new System.Drawing.Size(133, 19);
+            this.operationLabel.TabIndex = 4;
+            this.operationLabel.Text = "Creating data base ...";
+            this.operationLabel.UseCustomBackColor = true;
+            this.operationLabel.UseCustomForeColor = true;
+            // 
+            // progress
+            // 
+            this.progress.Location = new System.Drawing.Point(169, 5);
+            this.progress.Name = "progress";
+            this.progress.Size = new System.Drawing.Size(140, 15);
+            this.progress.Step = 1;
+            this.progress.TabIndex = 3;
+            this.progress.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // metroRadioButton1
             // 
             this.metroRadioButton1.AutoSize = true;
@@ -72,28 +93,6 @@
             this.metroRadioButton1.UseCustomBackColor = true;
             this.metroRadioButton1.UseCustomForeColor = true;
             this.metroRadioButton1.UseSelectable = true;
-            // 
-            // metroProgressBar1
-            // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(169, 5);
-            this.metroProgressBar1.Minimum = 20;
-            this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(140, 15);
-            this.metroProgressBar1.TabIndex = 3;
-            this.metroProgressBar1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroProgressBar1.Value = 20;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.ForeColor = System.Drawing.Color.White;
-            this.metroLabel1.Location = new System.Drawing.Point(315, 1);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(133, 19);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "Creating data base ...";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
             // 
             // metroTile4
             // 
@@ -178,8 +177,8 @@
         private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroProgressBar progress;
+        private MetroFramework.Controls.MetroLabel operationLabel;
     }
 }
 
