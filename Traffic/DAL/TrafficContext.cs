@@ -15,5 +15,6 @@ namespace Traffic.Models
         public DbSet<Point2> points2 { get; set; }
         public DbSet<Segment> segment { get; set; }
         public DbSet<Intersection> intersctions { get; set; }
+        public DbSet<Street> streets { get; set; }
     }
 }

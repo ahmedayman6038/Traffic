@@ -9,7 +9,5 @@ namespace Traffic.Models
     class Segment
     {
         public int id { get; set; }
-        public int direction { get; set; }
-        public string streetName { get; set; }
     }
 }

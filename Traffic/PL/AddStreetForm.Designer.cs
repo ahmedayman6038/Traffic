@@ -34,6 +34,7 @@
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -100,7 +101,7 @@
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(171, 186);
+            this.metroTile2.Location = new System.Drawing.Point(171, 194);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(125, 110);
             this.metroTile2.TabIndex = 5;
@@ -114,7 +115,7 @@
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(23, 186);
+            this.metroTile1.Location = new System.Drawing.Point(24, 194);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(125, 110);
             this.metroTile1.TabIndex = 4;
@@ -125,11 +126,21 @@
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(221, 152);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 6;
+            this.metroButton1.Text = "Save";
+            this.metroButton1.UseSelectable = true;
+            // 
             // AddStreetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 329);
+            this.ClientSize = new System.Drawing.Size(321, 344);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroComboBox1);
@@ -151,5 +162,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
