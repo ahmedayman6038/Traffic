@@ -25,6 +25,7 @@ namespace Traffic.PL
             InitializeComponent();
             fileName = file;
             db = new TrafficContext();
+            this.Text = "Adding Points";
         }
 
         private void AddPointsProgressForm_Load(object sender, EventArgs e)
