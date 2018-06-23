@@ -22,5 +22,10 @@ namespace Traffic
         {
             this.Close();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

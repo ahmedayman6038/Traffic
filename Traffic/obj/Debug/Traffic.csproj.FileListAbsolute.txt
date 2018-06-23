@@ -22,3 +22,6 @@ E:\Projects\Traffic\Traffic\bin\Debug\MySql.Data.Entity.EF6.dll
 E:\Projects\Traffic\Traffic\bin\Debug\EntityFramework.xml
 E:\Projects\Traffic\Traffic\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\Traffic\Traffic\bin\Debug\MySql.Data.xml
+E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddPointsProgressForm.resources
+E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddStreetForm.resources
+E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddIntersectionForm.resources
