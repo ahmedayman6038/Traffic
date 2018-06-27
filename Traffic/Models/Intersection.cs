@@ -10,5 +10,7 @@ namespace Traffic.Models
     {
         public int id { get; set; }
         public int pointIndex { get; set; }
+        public int numberOfIntersection { get; set; }
+
     }
 }
