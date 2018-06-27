@@ -38,6 +38,7 @@
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(386, 23);
             this.progress.TabIndex = 0;
+            this.progress.Click += new System.EventHandler(this.progress_Click);
             // 
             // operationLabel
             // 

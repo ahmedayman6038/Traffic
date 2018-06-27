@@ -88,6 +88,7 @@
             this.intersections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.intersections.Size = new System.Drawing.Size(680, 247);
             this.intersections.TabIndex = 0;
+            this.intersections.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.intersections_CellContentClick);
             // 
             // PNumber
             // 
@@ -117,6 +118,7 @@
             this.cancel.TabIndex = 2;
             this.cancel.Text = "cancel";
             this.cancel.UseSelectable = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // metroPanel1
             // 
