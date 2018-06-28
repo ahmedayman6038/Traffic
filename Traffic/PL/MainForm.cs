@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using MetroFramework;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
-using Traffic.Models;
+using Traffic.DAL;
 using Traffic.PL;
 
 namespace Traffic
@@ -20,17 +21,26 @@ namespace Traffic
     public partial class MainForm : MetroForm
     {
         private TrafficContext db;
+        public static MetroRadioButton connect;
         public MainForm()
         {
             InitializeComponent();
-            db = new TrafficContext();
+            connect = connected;
+            db = TrafficDb.getConnection();
+            if (TrafficDb.checkConnection())
+            {
+                connect.Checked = true;
+            }
+            else
+            {
+                connect.Checked = false;
+            }
             operationLabel.Text = "";
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            AddForm addForm = new AddForm();
-            addForm.Show();
+            
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
@@ -42,8 +52,7 @@ namespace Traffic
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            DisplayForm displayForm = new DisplayForm();
-            displayForm.Show();
+            
         }
 
         private void metroTile4_Click(object sender, EventArgs e)

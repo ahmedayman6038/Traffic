@@ -9,11 +9,6 @@ namespace Traffic.Helper
 {
     class SystemHelper
     {
-        private TrafficContext db;
-
-        public SystemHelper()
-        {
-            db = new TrafficContext();
-        }
+       
     }
 }

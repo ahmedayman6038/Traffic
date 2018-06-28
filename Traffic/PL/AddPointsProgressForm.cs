@@ -12,13 +12,13 @@ using System.Xml;
 using MetroFramework;
 using MetroFramework.Forms;
 using Traffic.Models;
+using Traffic.DAL;
 
 namespace Traffic.PL
 {
     public partial class AddPointsProgressForm : MetroForm
     {
         private string fileName;
-        private TrafficContext db;
         public static List<Point1> listOfPoint1 = new List<Point1>();
         public static List<Point2> listOfPoint2 = new List<Point2>();
 
@@ -26,7 +26,6 @@ namespace Traffic.PL
         {
             InitializeComponent();
             fileName = file;
-            db = new TrafficContext();
             this.Text = "Adding Points";
         }
 
@@ -54,7 +53,7 @@ namespace Traffic.PL
                 xmlnode = xmldoc.GetElementsByTagName("wpt");
                 int records = xmlnode.Count;
                 progress.Maximum = records;
-                bool ignore = false;
+                //bool ignore = false;
                 for (int i = 0; i < records; i++)
                 {
                     lon = Double.Parse(xmlnode[i].Attributes["lon"].Value);
