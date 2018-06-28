@@ -19,6 +19,8 @@ namespace Traffic.PL
     {
         private string fileName;
         private TrafficContext db;
+        public static List<Point1> listOfPoint1 = new List<Point1>();
+        public static List<Point2> listOfPoint2 = new List<Point2>();
 
         public AddPointsProgressForm(string file)
         {
@@ -92,18 +94,18 @@ namespace Traffic.PL
                     point2.name = name;
                     if (i == 0)
                     {
-                        db.points1.Add(point1);
+                        listOfPoint1.Add(point1);
                     }
                     else if (i == records - 1)
                     {
-                        db.points2.Add(point2);
-                    }
+                        listOfPoint2.Add(point2);
+                    } 
                     else
                     {
-                        db.points1.Add(point1);
-                        db.points2.Add(point2);
+                        listOfPoint1.Add(point1);
+                        listOfPoint2.Add(point2);
                     }
-                    db.SaveChanges();
+                    
                     progress.Value += 1;
                     progress.Refresh();
                     operationLabel.Text = "Adding Record " + (i + 1).ToString() + "...";
@@ -129,6 +131,11 @@ namespace Traffic.PL
         }
 
         private void operationLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progress_Click(object sender, EventArgs e)
         {
 
         }

@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Traffic.Models
 {
-    class Intersection
+    public class Intersection
     {
         public int id { get; set; }
+        public int numberOfIntersection { get; set; }
         public int pointIndex { get; set; }
+        public int caseOfIntersection { get; set; }
+        public int? streetId { get; set; }
+        public virtual Street street { get; set; }
     }
 }
