@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
+using Traffic.Models;
+namespace Traffic.PL
+{
+    public partial class AddStreetForm : MetroForm
+    {
+        private TrafficContext db;
+        public AddStreetForm()
+        {
+            InitializeComponent();
+            db = new TrafficContext();
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Allowed Extension|*.xml;*.gpx";
+            file.FilterIndex = 2;
+            file.RestoreDirectory = true;
+            DialogResult result = file.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                AddPointsProgressForm addPointsProgressForm = new AddPointsProgressForm(file.FileName);
+                addPointsProgressForm.Show();
+            }
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            AddIntersectionForm addIntersectionForm = new AddIntersectionForm();
+            addIntersectionForm.Show();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            /////////////////////////Add Street in database/////////////////////////////
+            Street st=new Street();
+            st.streetName = metroTextBox1.Text;
+            string dir = metroComboBox1.Text;
+            //Horizontal = 2
+            //Vertical = 1
+            if (dir.Equals("Horizontal"))
+            {
+                st.direction = 2;
+            }
+            else
+            {
+                st.direction = 1;
+            }
+            db.streets.Add(st);
+            ////////////////////////Add Intersections in database///////////////////////
+
+            /*for (int rows = 0; rows < intersections.Rows.Count - 1; rows++)
+            {
+                MessageBox.Show(intersections.Rows[rows].Cells[0].Value.ToString() + "   " + intersections.Rows[rows].Cells[1].Value.ToString());
+                
+
+            }*/
+
+
+            db.SaveChanges();
+
+            this.Close();
+
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

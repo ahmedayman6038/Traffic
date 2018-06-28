@@ -115,8 +115,8 @@
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(140, 130);
             this.metroTile3.TabIndex = 3;
-            this.metroTile3.Text = "Add Data";
-            this.metroTile3.TileImage = global::Traffic.Properties.Resources.folders;
+            this.metroTile3.Text = "Add Street";
+            this.metroTile3.TileImage = global::Traffic.Properties.Resources.map_location;
             this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile3.UseSelectable = true;
             this.metroTile3.UseTileImage = true;
@@ -139,6 +139,7 @@
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
+            this.metroTile1.Enabled = false;
             this.metroTile1.Location = new System.Drawing.Point(23, 73);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(140, 130);

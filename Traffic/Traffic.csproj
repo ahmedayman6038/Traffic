@@ -79,12 +79,31 @@
     <Compile Include="Models\Point1.cs" />
     <Compile Include="Models\Point2.cs" />
     <Compile Include="Models\Segment.cs" />
-    <Compile Include="Models\TrafficContext.cs" />
-    <Compile Include="PL\AddForm.cs">
+    <Compile Include="DAL\TrafficContext.cs" />
+    <Compile Include="Models\Street.cs" />
+    <Compile Include="PL\AddDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\AddForm.Designer.cs">
-      <DependentUpon>AddForm.cs</DependentUpon>
+    <Compile Include="PL\AddDatabaseForm.Designer.cs">
+      <DependentUpon>AddDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AddIntersectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddIntersectionForm.Designer.cs">
+      <DependentUpon>AddIntersectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AddPointsProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddPointsProgressForm.Designer.cs">
+      <DependentUpon>AddPointsProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\AddStreetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddStreetForm.Designer.cs">
+      <DependentUpon>AddStreetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\DisplayForm.cs">
       <SubType>Form</SubType>
@@ -106,8 +125,18 @@
     <Compile Include="PL\SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PL\AddForm.resx">
-      <DependentUpon>AddForm.cs</DependentUpon>
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="PL\AddDatabaseForm.resx">
+      <DependentUpon>AddDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddIntersectionForm.resx">
+      <DependentUpon>AddIntersectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddPointsProgressForm.resx">
+      <DependentUpon>AddPointsProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddStreetForm.resx">
+      <DependentUpon>AddStreetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\DisplayForm.resx">
       <DependentUpon>DisplayForm.cs</DependentUpon>
@@ -156,6 +185,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholder %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intersection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map-location.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

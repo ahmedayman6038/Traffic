@@ -15,10 +15,5 @@ namespace Traffic.Helper
         {
             db = new TrafficContext();
         }
-
-        public void AddData(string fileName)
-        {
-
-        }
     }
 }
