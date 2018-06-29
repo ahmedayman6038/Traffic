@@ -31,10 +31,9 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.operationLabel = new MetroFramework.Controls.MetroLabel();
             this.progress = new MetroFramework.Controls.MetroProgressBar();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
+            this.connected = new MetroFramework.Controls.MetroRadioButton();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +43,7 @@
             this.metroPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.metroPanel1.Controls.Add(this.operationLabel);
             this.metroPanel1.Controls.Add(this.progress);
-            this.metroPanel1.Controls.Add(this.metroRadioButton1);
+            this.metroPanel1.Controls.Add(this.connected);
             this.metroPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -80,24 +79,24 @@
             this.progress.TabIndex = 3;
             this.progress.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroRadioButton1
+            // connected
             // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Enabled = false;
-            this.metroRadioButton1.ForeColor = System.Drawing.Color.White;
-            this.metroRadioButton1.Location = new System.Drawing.Point(23, 5);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(81, 15);
-            this.metroRadioButton1.TabIndex = 2;
-            this.metroRadioButton1.Text = "Connected";
-            this.metroRadioButton1.UseCustomBackColor = true;
-            this.metroRadioButton1.UseCustomForeColor = true;
-            this.metroRadioButton1.UseSelectable = true;
+            this.connected.AutoSize = true;
+            this.connected.Enabled = false;
+            this.connected.ForeColor = System.Drawing.Color.White;
+            this.connected.Location = new System.Drawing.Point(23, 5);
+            this.connected.Name = "connected";
+            this.connected.Size = new System.Drawing.Size(81, 15);
+            this.connected.TabIndex = 2;
+            this.connected.Text = "Connected";
+            this.connected.UseCustomBackColor = true;
+            this.connected.UseCustomForeColor = true;
+            this.connected.UseSelectable = true;
             // 
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(461, 73);
+            this.metroTile4.Location = new System.Drawing.Point(315, 63);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(140, 130);
             this.metroTile4.TabIndex = 4;
@@ -111,7 +110,7 @@
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(315, 73);
+            this.metroTile3.Location = new System.Drawing.Point(23, 63);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(140, 130);
             this.metroTile3.TabIndex = 3;
@@ -122,30 +121,15 @@
             this.metroTile3.UseTileImage = true;
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
-            // metroTile2
-            // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(169, 73);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(140, 130);
-            this.metroTile2.TabIndex = 1;
-            this.metroTile2.Text = "Connect Database";
-            this.metroTile2.TileImage = global::Traffic.Properties.Resources.database_with_internet_conection;
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
-            // 
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Enabled = false;
-            this.metroTile1.Location = new System.Drawing.Point(23, 73);
+            this.metroTile1.Location = new System.Drawing.Point(169, 63);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(140, 130);
             this.metroTile1.TabIndex = 0;
-            this.metroTile1.Text = "Add Database";
-            this.metroTile1.TileImage = global::Traffic.Properties.Resources.add__1_;
+            this.metroTile1.Text = "Update Street";
+            this.metroTile1.TileImage = global::Traffic.Properties.Resources.refresh;
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseTileImage = true;
@@ -159,7 +143,6 @@
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -173,9 +156,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
+        private MetroFramework.Controls.MetroRadioButton connected;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroProgressBar progress;

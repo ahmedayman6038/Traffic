@@ -11,7 +11,12 @@ namespace Traffic.Models
         public int id { get; set; }
         public int numberOfIntersection { get; set; }
         public int pointIndex { get; set; }
-        public int caseOfIntersection { get; set; }
+        public int case1 { get; set; }
+        public int case2 { get; set; }
+        public int case3 { get; set; }
+        public double delyTime1 { get; set; }
+        public double delyTime2 { get; set; }
+        public double delyTime3 { get; set; }
         public int? streetId { get; set; }
         public virtual Street street { get; set; }
     }

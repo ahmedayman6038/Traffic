@@ -81,9 +81,8 @@
     <Compile Include="Models\Segment.cs" />
     <Compile Include="DAL\TrafficContext.cs" />
     <Compile Include="Models\Street.cs" />
-    <Compile Include="PL\AddDatabaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Models\TrafficBoard.cs" />
+    <Compile Include="PL\AddDatabaseForm.cs" />
     <Compile Include="PL\AddDatabaseForm.Designer.cs">
       <DependentUpon>AddDatabaseForm.cs</DependentUpon>
     </Compile>
@@ -105,9 +104,7 @@
     <Compile Include="PL\AddStreetForm.Designer.cs">
       <DependentUpon>AddStreetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\DisplayForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PL\DisplayForm.cs" />
     <Compile Include="PL\DisplayForm.Designer.cs">
       <DependentUpon>DisplayForm.cs</DependentUpon>
     </Compile>
