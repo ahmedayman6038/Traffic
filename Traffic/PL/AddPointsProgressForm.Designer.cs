@@ -37,6 +37,7 @@
             this.progress.Location = new System.Drawing.Point(23, 63);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(386, 23);
+            this.progress.Step = 1;
             this.progress.TabIndex = 0;
             this.progress.Click += new System.EventHandler(this.progress_Click);
             // 

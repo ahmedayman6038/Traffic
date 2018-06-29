@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\TrafficDb.cs" />
     <Compile Include="Helper\SystemHelper.cs" />
     <Compile Include="Models\Intersection.cs" />
     <Compile Include="Models\Point1.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Models\Segment.cs" />
     <Compile Include="DAL\TrafficContext.cs" />
     <Compile Include="Models\Street.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\TrafficBoard.cs" />
     <Compile Include="PL\AddDatabaseForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +90,8 @@
     <Compile Include="PL\AddDatabaseForm.Designer.cs">
       <DependentUpon>AddDatabaseForm.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 99f80076f8234f274e4aad9a4ece8c6728155f24
     <Compile Include="PL\AddIntersectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +110,6 @@
     <Compile Include="PL\AddStreetForm.Designer.cs">
       <DependentUpon>AddStreetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\DisplayForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\DisplayForm.Designer.cs">
-      <DependentUpon>DisplayForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,9 +125,6 @@
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="PL\AddDatabaseForm.resx">
-      <DependentUpon>AddDatabaseForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\AddIntersectionForm.resx">
       <DependentUpon>AddIntersectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\AddStreetForm.resx">
       <DependentUpon>AddStreetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\DisplayForm.resx">
-      <DependentUpon>DisplayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -195,6 +187,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\map-location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using Traffic.DAL;
 
 namespace Traffic
 {
@@ -50,6 +51,16 @@ namespace Traffic
             DialogResult dr = MetroMessageBox.Show(this, "Setting Saved Succesfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(dr == DialogResult.OK)
             {
+                TrafficContext db = TrafficDb.getConnection();
+                if (TrafficDb.checkConnection())
+                {
+                    MainForm.connect.Checked = true;
+                }
+                else
+                {
+                    MainForm.connect.Checked = false;
+                }
+                MainForm.connect.Refresh();
                 this.Close();
             }
         }

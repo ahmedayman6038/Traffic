@@ -120,7 +120,7 @@
             this.password.Location = new System.Drawing.Point(168, 222);
             this.password.MaxLength = 32767;
             this.password.Name = "password";
-            this.password.PasswordChar = '\0';
+            this.password.PasswordChar = '*';
             this.password.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.password.SelectedText = "";
             this.password.SelectionLength = 0;

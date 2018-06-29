@@ -11,9 +11,7 @@ E:\Projects\Traffic\Traffic\bin\Debug\MetroFramework.Design.dll
 E:\Projects\Traffic\Traffic\bin\Debug\MetroFramework.dll
 E:\Projects\Traffic\Traffic\bin\Debug\MetroFramework.Fonts.dll
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.csproj.CopyComplete
-E:\Projects\Traffic\Traffic\obj\Debug\Traffic.AddForm.resources
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.MainForm.resources
-E:\Projects\Traffic\Traffic\obj\Debug\Traffic.DisplayForm.resources
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.SettingForm.resources
 E:\Projects\Traffic\Traffic\bin\Debug\EntityFramework.dll
 E:\Projects\Traffic\Traffic\bin\Debug\EntityFramework.SqlServer.dll

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using Traffic.DAL;
 using Traffic.Models;
 namespace Traffic.PL
 {
@@ -18,7 +19,8 @@ namespace Traffic.PL
         public AddStreetForm()
         {
             InitializeComponent();
-            db = new TrafficContext();
+            db = TrafficDb.getConnection();
+            metroComboBox1.SelectedIndex = 0;
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace Traffic.PL
                 st.direction = 1;
             }
             db.streets.Add(st);
+            db.SaveChanges();
 
             ////////////////////////Add points in database///////////////////////
             for (int rows = 0; rows < AddPointsProgressForm.listOfPoint1.Count; rows++)
