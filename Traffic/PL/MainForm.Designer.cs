@@ -28,41 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.panel = new MetroFramework.Controls.MetroPanel();
             this.operationLabel = new MetroFramework.Controls.MetroLabel();
             this.progress = new MetroFramework.Controls.MetroProgressBar();
             this.connected = new MetroFramework.Controls.MetroRadioButton();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroPanel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroPanel1
+            // panel
             // 
-            this.metroPanel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.metroPanel1.Controls.Add(this.operationLabel);
-            this.metroPanel1.Controls.Add(this.progress);
-            this.metroPanel1.Controls.Add(this.connected);
-            this.metroPanel1.ForeColor = System.Drawing.Color.Transparent;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 425);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(800, 25);
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.UseCustomForeColor = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.panel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel.Controls.Add(this.operationLabel);
+            this.panel.Controls.Add(this.progress);
+            this.panel.Controls.Add(this.connected);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel.ForeColor = System.Drawing.Color.Transparent;
+            this.panel.HorizontalScrollbarBarColor = true;
+            this.panel.HorizontalScrollbarHighlightOnWheel = false;
+            this.panel.HorizontalScrollbarSize = 10;
+            this.panel.Location = new System.Drawing.Point(20, 405);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(760, 25);
+            this.panel.TabIndex = 2;
+            this.panel.UseCustomBackColor = true;
+            this.panel.UseCustomForeColor = true;
+            this.panel.VerticalScrollbarBarColor = true;
+            this.panel.VerticalScrollbarHighlightOnWheel = false;
+            this.panel.VerticalScrollbarSize = 10;
             // 
             // operationLabel
             // 
             this.operationLabel.AutoSize = true;
             this.operationLabel.ForeColor = System.Drawing.Color.White;
-            this.operationLabel.Location = new System.Drawing.Point(315, 1);
+            this.operationLabel.Location = new System.Drawing.Point(441, 1);
             this.operationLabel.Name = "operationLabel";
             this.operationLabel.Size = new System.Drawing.Size(133, 19);
             this.operationLabel.TabIndex = 4;
@@ -72,12 +73,13 @@
             // 
             // progress
             // 
-            this.progress.Location = new System.Drawing.Point(169, 5);
+            this.progress.Location = new System.Drawing.Point(149, 5);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(140, 15);
+            this.progress.Size = new System.Drawing.Size(286, 15);
             this.progress.Step = 1;
             this.progress.TabIndex = 3;
             this.progress.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.progress.Click += new System.EventHandler(this.progress_Click);
             // 
             // connected
             // 
@@ -96,7 +98,7 @@
             // metroTile4
             // 
             this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(315, 63);
+            this.metroTile4.Location = new System.Drawing.Point(315, 84);
             this.metroTile4.Name = "metroTile4";
             this.metroTile4.Size = new System.Drawing.Size(140, 130);
             this.metroTile4.TabIndex = 4;
@@ -110,7 +112,7 @@
             // metroTile3
             // 
             this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(23, 63);
+            this.metroTile3.Location = new System.Drawing.Point(23, 84);
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(140, 130);
             this.metroTile3.TabIndex = 3;
@@ -124,7 +126,7 @@
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(169, 63);
+            this.metroTile1.Location = new System.Drawing.Point(169, 84);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(140, 130);
             this.metroTile1.TabIndex = 0;
@@ -142,13 +144,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.metroTile1);
-            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Traffic";
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -156,7 +157,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel panel;
         private MetroFramework.Controls.MetroRadioButton connected;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;

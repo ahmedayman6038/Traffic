@@ -20,7 +20,6 @@ namespace Traffic.PL
         {
             InitializeComponent();
             db = TrafficDb.getConnection();
-            metroComboBox1.SelectedIndex = 0;
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -39,16 +38,10 @@ namespace Traffic.PL
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            AddIntersectionForm addIntersectionForm = new AddIntersectionForm();
-            addIntersectionForm.Show();
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
             /////////////////////////Add Street in database/////////////////////////////
-            Street st=new Street();
+            Street st = new Street();
             st.streetName = metroTextBox1.Text;
-            string dir = metroComboBox1.Text;
+            string dir = dirTxt.Text;
             //Horizontal = 2
             //Vertical = 1
             if (dir.Equals("Horizontal"))
@@ -71,7 +64,7 @@ namespace Traffic.PL
                 db.points2.Add(AddPointsProgressForm.listOfPoint2[rows]);
                 db.SaveChanges();
             }
-               
+
             ////////////////////////Add Intersections in database///////////////////////
             Intersection tempForIntersection = new Intersection();
             for (int rows = 0; rows < AddIntersectionForm.intersect.Count; rows++)
@@ -79,7 +72,7 @@ namespace Traffic.PL
 
                 tempForIntersection.numberOfIntersection = AddIntersectionForm.intersect[rows].numberOfIntersection;
                 tempForIntersection.pointIndex = AddIntersectionForm.intersect[rows].pointIndex;
-               // tempForIntersection.caseOfIntersection = AddIntersectionForm.intersect[rows].caseOfIntersection;
+                // tempForIntersection.caseOfIntersection = AddIntersectionForm.intersect[rows].caseOfIntersection;
                 tempForIntersection.street = st;
                 db.intersctions.Add(tempForIntersection);
                 db.SaveChanges();
@@ -88,22 +81,22 @@ namespace Traffic.PL
             ////////////////////////Add Segments in database///////////////////////
             Segment tempSegment = new Segment();
             tempSegment.firstIntersection = 0;
-            tempSegment.secondIntersection= AddIntersectionForm.intersect[0].pointIndex;
-            for (int point = 1,intersect=1; point <= AddPointsProgressForm.listOfPoint1.Count(); point++)  //from first point to last point in the same street
+            tempSegment.secondIntersection = AddIntersectionForm.intersect[0].pointIndex;
+            for (int point = 1, intersect = 1; point <= AddPointsProgressForm.listOfPoint1.Count(); point++)  //from first point to last point in the same street
             {
-                if(point== tempSegment.secondIntersection&& intersect<AddIntersectionForm.intersect.Count)
+                if (point == tempSegment.secondIntersection && intersect < AddIntersectionForm.intersect.Count)
                 {
                     tempSegment.firstIntersection = tempSegment.secondIntersection;
                     tempSegment.secondIntersection = AddIntersectionForm.intersect[intersect++].pointIndex;
-                }       
-                else if(point == tempSegment.secondIntersection)
+                }
+                else if (point == tempSegment.secondIntersection)
                 {
                     tempSegment.firstIntersection = AddIntersectionForm.intersect[--intersect].pointIndex;
                     tempSegment.secondIntersection = 0;
                 }
                 tempSegment.street = st;
-                tempSegment.point1 =AddPointsProgressForm.listOfPoint1[point-1];
-                tempSegment.point2 =AddPointsProgressForm.listOfPoint2[point-1];
+                tempSegment.point1 = AddPointsProgressForm.listOfPoint1[point - 1];
+                tempSegment.point2 = AddPointsProgressForm.listOfPoint2[point - 1];
                 db.segment.Add(tempSegment);
                 db.SaveChanges();
             }
@@ -117,12 +110,22 @@ namespace Traffic.PL
 
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
         {
 
         }

@@ -25,6 +25,9 @@ namespace Traffic
         public MainForm()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+
+            panel.Width = this.Width;
             connect = connected;
             db = TrafficDb.getConnection();
             if (TrafficDb.checkConnection())
@@ -59,6 +62,11 @@ namespace Traffic
         {
             SettingForm settingForm = new SettingForm();
             settingForm.Show();
+        }
+
+        private void progress_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

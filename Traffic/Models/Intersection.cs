@@ -14,9 +14,9 @@ namespace Traffic.Models
         public int case1 { get; set; }
         public int case2 { get; set; }
         public int case3 { get; set; }
-        public double delyTime1 { get; set; }
-        public double delyTime2 { get; set; }
-        public double delyTime3 { get; set; }
+        public double delayTime1 { get; set; }
+        public double delayTime2 { get; set; }
+        public double delayTime3 { get; set; }
         public int? streetId { get; set; }
         public virtual Street street { get; set; }
     }
