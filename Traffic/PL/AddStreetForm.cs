@@ -76,7 +76,7 @@ namespace Traffic.PL
 
                 tempForIntersection.numberOfIntersection = AddIntersectionForm.intersect[rows].numberOfIntersection;
                 tempForIntersection.pointIndex = AddIntersectionForm.intersect[rows].pointIndex;
-                tempForIntersection.caseOfIntersection = AddIntersectionForm.intersect[rows].caseOfIntersection;
+               // tempForIntersection.caseOfIntersection = AddIntersectionForm.intersect[rows].caseOfIntersection;
                 tempForIntersection.street = st;
                 db.intersctions.Add(tempForIntersection);
                 db.SaveChanges();

@@ -81,6 +81,7 @@
     <Compile Include="Models\Segment.cs" />
     <Compile Include="DAL\TrafficContext.cs" />
     <Compile Include="Models\Street.cs" />
+    <Compile Include="Models\TrafficBoard.cs" />
     <Compile Include="PL\AddDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
