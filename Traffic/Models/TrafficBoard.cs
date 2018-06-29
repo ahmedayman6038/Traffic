@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Traffic.Models
 {
-    class TrafficBoard
+    public class TrafficBoard
     {
         public int id { get; set; }
         public virtual Point1 point1 { get; set; }
