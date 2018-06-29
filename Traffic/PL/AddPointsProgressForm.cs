@@ -55,7 +55,11 @@ namespace Traffic.PL
                 xmlnode = xmldoc.GetElementsByTagName("wpt");
                 int records = xmlnode.Count;
                 progress.Maximum = records;
+<<<<<<< HEAD
+               // bool ignore = false;
+=======
                 //bool ignore = false;
+>>>>>>> 99f80076f8234f274e4aad9a4ece8c6728155f24
                 for (int i = 0; i < records; i++)
                 {
                     lon = Double.Parse(xmlnode[i].Attributes["lon"].Value);
