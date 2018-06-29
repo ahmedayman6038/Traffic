@@ -21,5 +21,6 @@ namespace Traffic.DAL
         public DbSet<Segment> segment { get; set; }
         public DbSet<Intersection> intersctions { get; set; }
         public DbSet<Street> streets { get; set; }
+        public DbSet<TrafficBoard> trafficBoard { get; set; }
     }
 }
