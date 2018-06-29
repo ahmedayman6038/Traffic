@@ -19,6 +19,7 @@ namespace Traffic.PL
     public partial class AddPointsProgressForm : MetroForm
     {
         private string fileName;
+        private TrafficContext db;
         public static List<Point1> listOfPoint1 = new List<Point1>();
         public static List<Point2> listOfPoint2 = new List<Point2>();
 
@@ -26,6 +27,7 @@ namespace Traffic.PL
         {
             InitializeComponent();
             fileName = file;
+            db = TrafficDb.getConnection();
             this.Text = "Adding Points";
         }
 
