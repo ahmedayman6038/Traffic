@@ -14,7 +14,7 @@ namespace Traffic.PL
   
     public partial class AddIntersectionForm : MetroForm
     {
-       public static List<IntersectionData> intersect = new List<IntersectionData>();
+        public static List<IntersectionData> intersect = new List<IntersectionData>();
         public AddIntersectionForm()
         {
             InitializeComponent();
@@ -45,10 +45,11 @@ namespace Traffic.PL
             this.Close();
         }
     }
-     public partial class IntersectionData
-   {
+
+    public partial class IntersectionData
+    {
         public int numberOfIntersection;
         public int pointIndex;
        public int caseOfIntersection;
-   }
+    }
 }

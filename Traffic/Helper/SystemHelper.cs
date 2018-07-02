@@ -9,6 +9,6 @@ namespace Traffic.Helper
 {
     class SystemHelper
     {
-       
+      
     }
 }

@@ -31,13 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.dirTxt = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lbl1 = new MetroFramework.Controls.MetroLabel();
+            this.sname = new MetroFramework.Controls.MetroTextBox();
+            this.lbl2 = new MetroFramework.Controls.MetroLabel();
+            this.save = new MetroFramework.Controls.MetroTile();
+            this.addpoint = new MetroFramework.Controls.MetroTile();
+            this.sdir = new MetroFramework.Controls.MetroTextBox();
+            this.lbl3 = new MetroFramework.Controls.MetroLabel();
             this.intersections = new MetroFramework.Controls.MetroGrid();
             this.PNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Case1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,123 +49,123 @@
             ((System.ComponentModel.ISupportInitialize)(this.intersections)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroLabel1
+            // lbl1
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(24, 82);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Street Name";
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(24, 82);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(83, 19);
+            this.lbl1.TabIndex = 0;
+            this.lbl1.Text = "Street Name";
             // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(341, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(136, 78);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(363, 23);
-            this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(24, 118);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(99, 19);
-            this.metroLabel2.TabIndex = 2;
-            this.metroLabel2.Text = "Street Direction";
-            // 
-            // metroTile2
-            // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(652, 78);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(125, 110);
-            this.metroTile2.TabIndex = 5;
-            this.metroTile2.Text = "Save";
-            this.metroTile2.TileImage = global::Traffic.Properties.Resources.save;
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
-            // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(521, 78);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(125, 110);
-            this.metroTile1.TabIndex = 4;
-            this.metroTile1.Text = "Add Points";
-            this.metroTile1.TileImage = global::Traffic.Properties.Resources.placeholder__1_;
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
-            // dirTxt
+            // sname
             // 
             // 
             // 
             // 
-            this.dirTxt.CustomButton.Image = null;
-            this.dirTxt.CustomButton.Location = new System.Drawing.Point(341, 1);
-            this.dirTxt.CustomButton.Name = "";
-            this.dirTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.dirTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.dirTxt.CustomButton.TabIndex = 1;
-            this.dirTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.dirTxt.CustomButton.UseSelectable = true;
-            this.dirTxt.CustomButton.Visible = false;
-            this.dirTxt.Lines = new string[0];
-            this.dirTxt.Location = new System.Drawing.Point(136, 118);
-            this.dirTxt.MaxLength = 32767;
-            this.dirTxt.Name = "dirTxt";
-            this.dirTxt.PasswordChar = '\0';
-            this.dirTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dirTxt.SelectedText = "";
-            this.dirTxt.SelectionLength = 0;
-            this.dirTxt.SelectionStart = 0;
-            this.dirTxt.ShortcutsEnabled = true;
-            this.dirTxt.Size = new System.Drawing.Size(363, 23);
-            this.dirTxt.TabIndex = 6;
-            this.dirTxt.UseSelectable = true;
-            this.dirTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.dirTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.sname.CustomButton.Image = null;
+            this.sname.CustomButton.Location = new System.Drawing.Point(341, 1);
+            this.sname.CustomButton.Name = "";
+            this.sname.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.sname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.sname.CustomButton.TabIndex = 1;
+            this.sname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.sname.CustomButton.UseSelectable = true;
+            this.sname.CustomButton.Visible = false;
+            this.sname.Lines = new string[0];
+            this.sname.Location = new System.Drawing.Point(136, 78);
+            this.sname.MaxLength = 32767;
+            this.sname.Name = "sname";
+            this.sname.PasswordChar = '\0';
+            this.sname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.sname.SelectedText = "";
+            this.sname.SelectionLength = 0;
+            this.sname.SelectionStart = 0;
+            this.sname.ShortcutsEnabled = true;
+            this.sname.Size = new System.Drawing.Size(363, 23);
+            this.sname.TabIndex = 1;
+            this.sname.UseSelectable = true;
+            this.sname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.sname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.sname.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
-            // metroLabel3
+            // lbl2
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(24, 163);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(142, 25);
-            this.metroLabel3.TabIndex = 7;
-            this.metroLabel3.Text = "Add Intersections";
-            this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(24, 118);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(99, 19);
+            this.lbl2.TabIndex = 2;
+            this.lbl2.Text = "Street Direction";
+            // 
+            // save
+            // 
+            this.save.ActiveControl = null;
+            this.save.Location = new System.Drawing.Point(652, 78);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(125, 110);
+            this.save.TabIndex = 5;
+            this.save.Text = "Save";
+            this.save.TileImage = global::Traffic.Properties.Resources.save;
+            this.save.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.save.UseSelectable = true;
+            this.save.UseTileImage = true;
+            this.save.Click += new System.EventHandler(this.metroTile2_Click);
+            // 
+            // addpoint
+            // 
+            this.addpoint.ActiveControl = null;
+            this.addpoint.Location = new System.Drawing.Point(521, 78);
+            this.addpoint.Name = "addpoint";
+            this.addpoint.Size = new System.Drawing.Size(125, 110);
+            this.addpoint.TabIndex = 4;
+            this.addpoint.Text = "Add Points";
+            this.addpoint.TileImage = global::Traffic.Properties.Resources.placeholder__1_;
+            this.addpoint.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addpoint.UseSelectable = true;
+            this.addpoint.UseTileImage = true;
+            this.addpoint.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // sdir
+            // 
+            // 
+            // 
+            // 
+            this.sdir.CustomButton.Image = null;
+            this.sdir.CustomButton.Location = new System.Drawing.Point(341, 1);
+            this.sdir.CustomButton.Name = "";
+            this.sdir.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.sdir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.sdir.CustomButton.TabIndex = 1;
+            this.sdir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.sdir.CustomButton.UseSelectable = true;
+            this.sdir.CustomButton.Visible = false;
+            this.sdir.Lines = new string[0];
+            this.sdir.Location = new System.Drawing.Point(136, 118);
+            this.sdir.MaxLength = 32767;
+            this.sdir.Name = "sdir";
+            this.sdir.PasswordChar = '\0';
+            this.sdir.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.sdir.SelectedText = "";
+            this.sdir.SelectionLength = 0;
+            this.sdir.SelectionStart = 0;
+            this.sdir.ShortcutsEnabled = true;
+            this.sdir.Size = new System.Drawing.Size(363, 23);
+            this.sdir.TabIndex = 6;
+            this.sdir.UseSelectable = true;
+            this.sdir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.sdir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lbl3.Location = new System.Drawing.Point(24, 163);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(142, 25);
+            this.lbl3.TabIndex = 7;
+            this.lbl3.Text = "Add Intersections";
+            this.lbl3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // intersections
             // 
@@ -260,13 +260,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.intersections);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.dirTxt);
-            this.Controls.Add(this.metroTile2);
-            this.Controls.Add(this.metroTile1);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.lbl3);
+            this.Controls.Add(this.sdir);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.addpoint);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.sname);
+            this.Controls.Add(this.lbl1);
             this.Name = "AddStreetForm";
             this.Text = "Add Street";
             ((System.ComponentModel.ISupportInitialize)(this.intersections)).EndInit();
@@ -277,13 +277,13 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTextBox dirTxt;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel lbl1;
+        private MetroFramework.Controls.MetroTextBox sname;
+        private MetroFramework.Controls.MetroLabel lbl2;
+        private MetroFramework.Controls.MetroTile addpoint;
+        private MetroFramework.Controls.MetroTile save;
+        private MetroFramework.Controls.MetroTextBox sdir;
+        private MetroFramework.Controls.MetroLabel lbl3;
         private MetroFramework.Controls.MetroGrid intersections;
         private System.Windows.Forms.DataGridViewTextBoxColumn PNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Case1;
