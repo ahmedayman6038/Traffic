@@ -64,5 +64,10 @@ namespace Traffic
                 this.Close();
             }
         }
+
+        private void SettingForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

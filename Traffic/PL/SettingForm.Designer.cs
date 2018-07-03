@@ -346,6 +346,7 @@
             this.Name = "SettingForm";
             this.Resizable = false;
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.SettingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

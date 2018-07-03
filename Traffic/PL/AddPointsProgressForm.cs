@@ -55,6 +55,7 @@ namespace Traffic.PL
                 xmlnode = xmldoc.GetElementsByTagName("wpt");
                 int records = xmlnode.Count;
                 progress.Maximum = records;
+                // bool ignore = false;
                 for (int i = 0; i < records; i++)
                 {
                     lon = Double.Parse(xmlnode[i].Attributes["lon"].Value);
@@ -99,13 +100,13 @@ namespace Traffic.PL
                     else if (i == records - 1)
                     {
                         listOfPoint2.Add(point2);
-                    } 
+                    }
                     else
                     {
                         listOfPoint1.Add(point1);
                         listOfPoint2.Add(point2);
                     }
-                    
+
                     progress.Value += 1;
                     progress.Refresh();
                     operationLabel.Text = "Adding Record " + (i + 1).ToString() + "...";
