@@ -21,24 +21,41 @@ namespace Traffic
     public partial class MainForm : MetroForm
     {
         private TrafficContext db;
-        public static MetroRadioButton connect;
         public MainForm()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-
             panel.Width = this.Width;
-            connect = connected;
             db = TrafficDb.getConnection();
             if (TrafficDb.checkConnection())
             {
-                connect.Checked = true;
+                connected.Checked = true;
             }
             else
             {
-                connect.Checked = false;
+                connected.Checked = false;
             }
-            operationLabel.Text = "";
+            if(Properties.Settings.Default.Theme == "Dark")
+            {
+                this.Theme = MetroThemeStyle.Dark;
+                AddStreet.Theme = MetroThemeStyle.Dark;
+                UpdateStreet.Theme = MetroThemeStyle.Dark;
+                Settings.Theme = MetroThemeStyle.Dark;
+                connected.Theme = MetroThemeStyle.Dark;
+                progress.Theme = MetroThemeStyle.Dark;
+                operationLabel.Theme = MetroThemeStyle.Dark;
+
+            }
+            else
+            {
+                this.Theme = MetroThemeStyle.Light;
+                AddStreet.Theme = MetroThemeStyle.Light;
+                UpdateStreet.Theme = MetroThemeStyle.Light;
+                Settings.Theme = MetroThemeStyle.Light;
+                connected.Theme = MetroThemeStyle.Light;
+                progress.Theme = MetroThemeStyle.Light;
+                operationLabel.Theme = MetroThemeStyle.Light;
+            }
         }
 
         private void metroTile1_Click(object sender, EventArgs e)

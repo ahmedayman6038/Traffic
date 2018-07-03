@@ -32,9 +32,9 @@
             this.operationLabel = new MetroFramework.Controls.MetroLabel();
             this.progress = new MetroFramework.Controls.MetroProgressBar();
             this.connected = new MetroFramework.Controls.MetroRadioButton();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.Settings = new MetroFramework.Controls.MetroTile();
+            this.AddStreet = new MetroFramework.Controls.MetroTile();
+            this.UpdateStreet = new MetroFramework.Controls.MetroTile();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,9 +65,8 @@
             this.operationLabel.ForeColor = System.Drawing.Color.White;
             this.operationLabel.Location = new System.Drawing.Point(441, 1);
             this.operationLabel.Name = "operationLabel";
-            this.operationLabel.Size = new System.Drawing.Size(133, 19);
+            this.operationLabel.Size = new System.Drawing.Size(0, 0);
             this.operationLabel.TabIndex = 4;
-            this.operationLabel.Text = "Creating data base ...";
             this.operationLabel.UseCustomBackColor = true;
             this.operationLabel.UseCustomForeColor = true;
             // 
@@ -95,57 +94,58 @@
             this.connected.UseCustomForeColor = true;
             this.connected.UseSelectable = true;
             // 
-            // metroTile4
+            // Settings
             // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(315, 84);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(140, 130);
-            this.metroTile4.TabIndex = 4;
-            this.metroTile4.Text = "Settings";
-            this.metroTile4.TileImage = global::Traffic.Properties.Resources.settings;
-            this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile4.UseSelectable = true;
-            this.metroTile4.UseTileImage = true;
-            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
+            this.Settings.ActiveControl = null;
+            this.Settings.Location = new System.Drawing.Point(315, 84);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(140, 130);
+            this.Settings.TabIndex = 4;
+            this.Settings.Text = "Settings";
+            this.Settings.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Settings.TileImage = global::Traffic.Properties.Resources.settings;
+            this.Settings.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Settings.UseSelectable = true;
+            this.Settings.UseTileImage = true;
+            this.Settings.Click += new System.EventHandler(this.metroTile4_Click);
             // 
-            // metroTile3
+            // AddStreet
             // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(23, 84);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(140, 130);
-            this.metroTile3.TabIndex = 3;
-            this.metroTile3.Text = "Add Street";
-            this.metroTile3.TileImage = global::Traffic.Properties.Resources.map_location;
-            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile3.UseSelectable = true;
-            this.metroTile3.UseTileImage = true;
-            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            this.AddStreet.ActiveControl = null;
+            this.AddStreet.Location = new System.Drawing.Point(23, 84);
+            this.AddStreet.Name = "AddStreet";
+            this.AddStreet.Size = new System.Drawing.Size(140, 130);
+            this.AddStreet.TabIndex = 3;
+            this.AddStreet.Text = "Add Street";
+            this.AddStreet.TileImage = global::Traffic.Properties.Resources.map_location;
+            this.AddStreet.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AddStreet.UseSelectable = true;
+            this.AddStreet.UseTileImage = true;
+            this.AddStreet.Click += new System.EventHandler(this.metroTile3_Click);
             // 
-            // metroTile1
+            // UpdateStreet
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(169, 84);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(140, 130);
-            this.metroTile1.TabIndex = 0;
-            this.metroTile1.Text = "Update Street";
-            this.metroTile1.TileImage = global::Traffic.Properties.Resources.refresh;
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            this.UpdateStreet.ActiveControl = null;
+            this.UpdateStreet.Location = new System.Drawing.Point(169, 84);
+            this.UpdateStreet.Name = "UpdateStreet";
+            this.UpdateStreet.Size = new System.Drawing.Size(140, 130);
+            this.UpdateStreet.TabIndex = 0;
+            this.UpdateStreet.Text = "Update Street";
+            this.UpdateStreet.TileImage = global::Traffic.Properties.Resources.refresh;
+            this.UpdateStreet.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UpdateStreet.UseSelectable = true;
+            this.UpdateStreet.UseTileImage = true;
+            this.UpdateStreet.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.metroTile4);
-            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.Settings);
+            this.Controls.Add(this.AddStreet);
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.metroTile1);
+            this.Controls.Add(this.UpdateStreet);
             this.Name = "MainForm";
             this.Text = "Traffic";
             this.panel.ResumeLayout(false);
@@ -156,11 +156,11 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile UpdateStreet;
         private MetroFramework.Controls.MetroPanel panel;
         private MetroFramework.Controls.MetroRadioButton connected;
-        private MetroFramework.Controls.MetroTile metroTile3;
-        private MetroFramework.Controls.MetroTile metroTile4;
+        private MetroFramework.Controls.MetroTile AddStreet;
+        private MetroFramework.Controls.MetroTile Settings;
         private MetroFramework.Controls.MetroProgressBar progress;
         private MetroFramework.Controls.MetroLabel operationLabel;
     }

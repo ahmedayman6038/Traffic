@@ -20,6 +20,31 @@ namespace Traffic.PL
         {
             InitializeComponent();
             db = TrafficDb.getConnection();
+            if (Properties.Settings.Default.Theme == "Dark")
+            {
+                this.Theme = MetroThemeStyle.Dark;
+                lbl1.Theme = MetroThemeStyle.Dark;
+                lbl2.Theme = MetroThemeStyle.Dark;
+                lbl3.Theme = MetroThemeStyle.Dark;
+                sname.Theme = MetroThemeStyle.Dark;
+                sdir.Theme = MetroThemeStyle.Dark;
+                addpoint.Theme = MetroThemeStyle.Dark;
+                save.Theme = MetroThemeStyle.Dark;
+                intersections.Theme = MetroThemeStyle.Dark;
+
+            }
+            else
+            {
+                this.Theme = MetroThemeStyle.Light;
+                lbl1.Theme = MetroThemeStyle.Light;
+                lbl2.Theme = MetroThemeStyle.Light;
+                lbl3.Theme = MetroThemeStyle.Light;
+                sname.Theme = MetroThemeStyle.Light;
+                sdir.Theme = MetroThemeStyle.Light;
+                addpoint.Theme = MetroThemeStyle.Light;
+                save.Theme = MetroThemeStyle.Light;
+                intersections.Theme = MetroThemeStyle.Light;
+            }
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -40,8 +65,8 @@ namespace Traffic.PL
         {
             /////////////////////////Add Street in database/////////////////////////////
             Street st = new Street();
-            st.streetName = metroTextBox1.Text;
-            string dir = dirTxt.Text;
+            st.streetName = sname.Text;
+            string dir = sdir.Text;
             //Horizontal = 2
             //Vertical = 1
             if (dir.Equals("Horizontal"))
