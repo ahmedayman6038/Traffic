@@ -34,8 +34,6 @@
             this.lbl1 = new MetroFramework.Controls.MetroLabel();
             this.sname = new MetroFramework.Controls.MetroTextBox();
             this.lbl2 = new MetroFramework.Controls.MetroLabel();
-            this.save = new MetroFramework.Controls.MetroTile();
-            this.addpoint = new MetroFramework.Controls.MetroTile();
             this.sdir = new MetroFramework.Controls.MetroTextBox();
             this.lbl3 = new MetroFramework.Controls.MetroLabel();
             this.intersections = new MetroFramework.Controls.MetroGrid();
@@ -46,6 +44,9 @@
             this.Delay1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delay2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delay3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addsigns = new MetroFramework.Controls.MetroTile();
+            this.addpoint = new MetroFramework.Controls.MetroTile();
+            this.save = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.intersections)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,34 +98,6 @@
             this.lbl2.Size = new System.Drawing.Size(99, 19);
             this.lbl2.TabIndex = 2;
             this.lbl2.Text = "Street Direction";
-            // 
-            // save
-            // 
-            this.save.ActiveControl = null;
-            this.save.Location = new System.Drawing.Point(652, 78);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(125, 110);
-            this.save.TabIndex = 5;
-            this.save.Text = "Save";
-            this.save.TileImage = global::Traffic.Properties.Resources.save;
-            this.save.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.save.UseSelectable = true;
-            this.save.UseTileImage = true;
-            this.save.Click += new System.EventHandler(this.metroTile2_Click);
-            // 
-            // addpoint
-            // 
-            this.addpoint.ActiveControl = null;
-            this.addpoint.Location = new System.Drawing.Point(521, 78);
-            this.addpoint.Name = "addpoint";
-            this.addpoint.Size = new System.Drawing.Size(125, 110);
-            this.addpoint.TabIndex = 4;
-            this.addpoint.Text = "Add Points";
-            this.addpoint.TileImage = global::Traffic.Properties.Resources.placeholder__1_;
-            this.addpoint.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.addpoint.UseSelectable = true;
-            this.addpoint.UseTileImage = true;
-            this.addpoint.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // sdir
             // 
@@ -216,7 +189,7 @@
             this.intersections.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.intersections.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.intersections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.intersections.Size = new System.Drawing.Size(753, 283);
+            this.intersections.Size = new System.Drawing.Size(753, 257);
             this.intersections.TabIndex = 8;
             // 
             // PNumber
@@ -254,15 +227,54 @@
             this.Delay3.HeaderText = "Delay 3";
             this.Delay3.Name = "Delay3";
             // 
+            // addsigns
+            // 
+            this.addsigns.ActiveControl = null;
+            this.addsigns.Location = new System.Drawing.Point(652, 78);
+            this.addsigns.Name = "addsigns";
+            this.addsigns.Size = new System.Drawing.Size(125, 110);
+            this.addsigns.TabIndex = 9;
+            this.addsigns.Text = "Add Signs";
+            this.addsigns.TileImage = global::Traffic.Properties.Resources.sign;
+            this.addsigns.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addsigns.UseSelectable = true;
+            this.addsigns.UseTileImage = true;
+            this.addsigns.Click += new System.EventHandler(this.addsigns_Click);
+            // 
+            // addpoint
+            // 
+            this.addpoint.ActiveControl = null;
+            this.addpoint.Location = new System.Drawing.Point(521, 78);
+            this.addpoint.Name = "addpoint";
+            this.addpoint.Size = new System.Drawing.Size(125, 110);
+            this.addpoint.TabIndex = 4;
+            this.addpoint.Text = "Add Points";
+            this.addpoint.TileImage = global::Traffic.Properties.Resources.placeholder__1_;
+            this.addpoint.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addpoint.UseSelectable = true;
+            this.addpoint.UseTileImage = true;
+            this.addpoint.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(702, 457);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 10;
+            this.save.Text = "Save";
+            this.save.UseSelectable = true;
+            this.save.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
             // AddStreetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.addsigns);
             this.Controls.Add(this.intersections);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.sdir);
-            this.Controls.Add(this.save);
             this.Controls.Add(this.addpoint);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.sname);
@@ -281,7 +293,6 @@
         private MetroFramework.Controls.MetroTextBox sname;
         private MetroFramework.Controls.MetroLabel lbl2;
         private MetroFramework.Controls.MetroTile addpoint;
-        private MetroFramework.Controls.MetroTile save;
         private MetroFramework.Controls.MetroTextBox sdir;
         private MetroFramework.Controls.MetroLabel lbl3;
         private MetroFramework.Controls.MetroGrid intersections;
@@ -292,5 +303,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Delay1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delay2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delay3;
+        private MetroFramework.Controls.MetroTile addsigns;
+        private MetroFramework.Controls.MetroButton save;
     }
 }

@@ -30,6 +30,7 @@ namespace Traffic.PL
                 sdir.Theme = MetroThemeStyle.Dark;
                 addpoint.Theme = MetroThemeStyle.Dark;
                 save.Theme = MetroThemeStyle.Dark;
+                addsigns.Theme = MetroThemeStyle.Dark;
                 intersections.Theme = MetroThemeStyle.Dark;
 
             }
@@ -43,6 +44,7 @@ namespace Traffic.PL
                 sdir.Theme = MetroThemeStyle.Light;
                 addpoint.Theme = MetroThemeStyle.Light;
                 save.Theme = MetroThemeStyle.Light;
+                addsigns.Theme = MetroThemeStyle.Light;
                 intersections.Theme = MetroThemeStyle.Light;
             }
         }
@@ -62,6 +64,38 @@ namespace Traffic.PL
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addsigns_Click(object sender, EventArgs e)
+        {
+            AddSignsForm addSignsForm = new AddSignsForm();
+            addSignsForm.Show();
+        }
+
+        private void metroButton1_Click_1(object sender, EventArgs e)
         {
             /////////////////////////Add Street in database/////////////////////////////
             Street st = new Street();
@@ -135,27 +169,6 @@ namespace Traffic.PL
 
 
             this.Close();
-
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

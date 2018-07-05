@@ -89,6 +89,12 @@
     <Compile Include="PL\AddPointsProgressForm.Designer.cs">
       <DependentUpon>AddPointsProgressForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\AddSignsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AddSignsForm.Designer.cs">
+      <DependentUpon>AddSignsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\AddStreetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="PL\AddPointsProgressForm.resx">
       <DependentUpon>AddPointsProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\AddSignsForm.resx">
+      <DependentUpon>AddSignsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\AddStreetForm.resx">
       <DependentUpon>AddStreetForm.cs</DependentUpon>
@@ -172,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\road-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

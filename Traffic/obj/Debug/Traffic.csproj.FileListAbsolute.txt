@@ -74,3 +74,4 @@ F:\Traffic\Traffic\obj\Debug\Traffic.csproj.CoreCompileInputs.cache
 F:\Traffic\Traffic\obj\Debug\Traffic.csproj.CopyComplete
 F:\Traffic\Traffic\obj\Debug\Traffic.exe
 F:\Traffic\Traffic\obj\Debug\Traffic.pdb
+E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddSignsForm.resources
