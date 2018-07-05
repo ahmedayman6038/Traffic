@@ -83,12 +83,6 @@
     <Compile Include="DAL\TrafficContext.cs" />
     <Compile Include="Models\Street.cs" />
     <Compile Include="Models\TrafficBoard.cs" />
-    <Compile Include="PL\AddIntersectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\AddIntersectionForm.Designer.cs">
-      <DependentUpon>AddIntersectionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\AddPointsProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="PL\AddIntersectionForm.resx">
-      <DependentUpon>AddIntersectionForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\AddPointsProgressForm.resx">
       <DependentUpon>AddPointsProgressForm.cs</DependentUpon>
     </EmbeddedResource>

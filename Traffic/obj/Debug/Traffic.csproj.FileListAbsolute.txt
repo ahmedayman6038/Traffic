@@ -22,7 +22,6 @@ E:\Projects\Traffic\Traffic\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\Traffic\Traffic\bin\Debug\MySql.Data.xml
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddPointsProgressForm.resources
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddStreetForm.resources
-E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddIntersectionForm.resources
 E:\traffic\Traffic\bin\Debug\Traffic.exe.config
 E:\traffic\Traffic\bin\Debug\Traffic.exe
 E:\traffic\Traffic\bin\Debug\Traffic.pdb
