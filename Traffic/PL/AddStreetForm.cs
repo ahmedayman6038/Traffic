@@ -20,7 +20,31 @@ namespace Traffic.PL
         {
             InitializeComponent();
             db = TrafficDb.getConnection();
-            metroComboBox1.SelectedIndex = 0;
+            if (Properties.Settings.Default.Theme == "Dark")
+            {
+                this.Theme = MetroThemeStyle.Dark;
+                lbl1.Theme = MetroThemeStyle.Dark;
+                lbl2.Theme = MetroThemeStyle.Dark;
+                lbl3.Theme = MetroThemeStyle.Dark;
+                sname.Theme = MetroThemeStyle.Dark;
+                sdir.Theme = MetroThemeStyle.Dark;
+                addpoint.Theme = MetroThemeStyle.Dark;
+                save.Theme = MetroThemeStyle.Dark;
+                intersections.Theme = MetroThemeStyle.Dark;
+
+            }
+            else
+            {
+                this.Theme = MetroThemeStyle.Light;
+                lbl1.Theme = MetroThemeStyle.Light;
+                lbl2.Theme = MetroThemeStyle.Light;
+                lbl3.Theme = MetroThemeStyle.Light;
+                sname.Theme = MetroThemeStyle.Light;
+                sdir.Theme = MetroThemeStyle.Light;
+                addpoint.Theme = MetroThemeStyle.Light;
+                save.Theme = MetroThemeStyle.Light;
+                intersections.Theme = MetroThemeStyle.Light;
+            }
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -39,16 +63,10 @@ namespace Traffic.PL
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            AddIntersectionForm addIntersectionForm = new AddIntersectionForm();
-            addIntersectionForm.Show();
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
             /////////////////////////Add Street in database/////////////////////////////
-            Street st=new Street();
-            st.streetName = metroTextBox1.Text;
-            string dir = metroComboBox1.Text;
+            Street st = new Street();
+            st.streetName = sname.Text;
+            string dir = sdir.Text;
             //Horizontal = 2
             //Vertical = 1
             if (dir.Equals("Horizontal"))
@@ -71,15 +89,19 @@ namespace Traffic.PL
                 db.points2.Add(AddPointsProgressForm.listOfPoint2[rows]);
                 db.SaveChanges();
             }
-               
+
             ////////////////////////Add Intersections in database///////////////////////
             Intersection tempForIntersection = new Intersection();
-            for (int rows = 0; rows < AddIntersectionForm.intersect.Count; rows++)
+            for (int rows = 0; rows < intersections.Rows.Count - 1; rows++)
             {
-
-                tempForIntersection.numberOfIntersection = AddIntersectionForm.intersect[rows].numberOfIntersection;
-                tempForIntersection.pointIndex = AddIntersectionForm.intersect[rows].pointIndex;
-               // tempForIntersection.caseOfIntersection = AddIntersectionForm.intersect[rows].caseOfIntersection;
+                tempForIntersection.numberOfIntersection = rows;
+                tempForIntersection.pointIndex = Int32.Parse(intersections.Rows[rows].Cells[0].Value.ToString());
+                tempForIntersection.case1 = Int32.Parse(intersections.Rows[rows].Cells[1].Value.ToString());
+                tempForIntersection.case2 = Int32.Parse(intersections.Rows[rows].Cells[2].Value.ToString());
+                tempForIntersection.case3 = Int32.Parse(intersections.Rows[rows].Cells[3].Value.ToString());
+                tempForIntersection.delayTime1 = Int32.Parse(intersections.Rows[rows].Cells[4].Value.ToString());
+                tempForIntersection.delayTime2 = Int32.Parse(intersections.Rows[rows].Cells[5].Value.ToString());
+                tempForIntersection.delayTime3 = Int32.Parse(intersections.Rows[rows].Cells[6].Value.ToString());
                 tempForIntersection.street = st;
                 db.intersctions.Add(tempForIntersection);
                 db.SaveChanges();
@@ -88,27 +110,26 @@ namespace Traffic.PL
             ////////////////////////Add Segments in database///////////////////////
             Segment tempSegment = new Segment();
             tempSegment.firstIntersection = 0;
-            tempSegment.secondIntersection= AddIntersectionForm.intersect[0].pointIndex;
-            for (int point = 1,intersect=1; point <= AddPointsProgressForm.listOfPoint1.Count(); point++)  //from first point to last point in the same street
+            tempSegment.secondIntersection = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString());
+            for (int point = 1, intersect = 1; point <= AddPointsProgressForm.listOfPoint1.Count(); point++)  //from first point to last point in the same street
             {
-                if(point== tempSegment.secondIntersection&& intersect<AddIntersectionForm.intersect.Count)
+                if (point == tempSegment.secondIntersection && intersect < intersections.Rows.Count - 1)
                 {
                     tempSegment.firstIntersection = tempSegment.secondIntersection;
-                    tempSegment.secondIntersection = AddIntersectionForm.intersect[intersect++].pointIndex;
-                }       
-                else if(point == tempSegment.secondIntersection)
+                    tempSegment.secondIntersection = Int32.Parse(intersections.Rows[intersect++].Cells[0].Value.ToString());
+                }
+                else if (point == tempSegment.secondIntersection)
                 {
-                    tempSegment.firstIntersection = AddIntersectionForm.intersect[--intersect].pointIndex;
+                    tempSegment.firstIntersection = Int32.Parse(intersections.Rows[--intersect].Cells[0].Value.ToString());
                     tempSegment.secondIntersection = 0;
                 }
                 tempSegment.street = st;
-                tempSegment.point1 =AddPointsProgressForm.listOfPoint1[point-1];
-                tempSegment.point2 =AddPointsProgressForm.listOfPoint2[point-1];
+                tempSegment.point1 = AddPointsProgressForm.listOfPoint1[point - 1];
+                tempSegment.point2 = AddPointsProgressForm.listOfPoint2[point - 1];
                 db.segment.Add(tempSegment);
                 db.SaveChanges();
             }
             db.SaveChanges();
-            AddIntersectionForm.intersect.RemoveRange(0, AddIntersectionForm.intersect.Count);
             AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);
             AddPointsProgressForm.listOfPoint2.RemoveRange(0, AddPointsProgressForm.listOfPoint2.Count);
 
@@ -117,12 +138,22 @@ namespace Traffic.PL
 
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel3_Click(object sender, EventArgs e)
         {
 
         }

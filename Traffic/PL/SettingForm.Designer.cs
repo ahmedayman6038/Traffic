@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lbl8 = new MetroFramework.Controls.MetroLabel();
             this.theme = new MetroFramework.Controls.MetroComboBox();
             this.cancel = new MetroFramework.Controls.MetroButton();
             this.save = new MetroFramework.Controls.MetroButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.lbl1 = new MetroFramework.Controls.MetroLabel();
             this.password = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.lbl6 = new MetroFramework.Controls.MetroLabel();
             this.uname = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.lbl5 = new MetroFramework.Controls.MetroLabel();
             this.dname = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.lbl3 = new MetroFramework.Controls.MetroLabel();
             this.sname = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.lbl2 = new MetroFramework.Controls.MetroLabel();
+            this.lbl7 = new MetroFramework.Controls.MetroLabel();
             this.pnumber = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.lbl4 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
-            // metroLabel1
+            // lbl8
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.ForeColor = System.Drawing.Color.White;
-            this.metroLabel1.Location = new System.Drawing.Point(58, 314);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(49, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Theme";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lbl8.AutoSize = true;
+            this.lbl8.ForeColor = System.Drawing.Color.White;
+            this.lbl8.Location = new System.Drawing.Point(51, 304);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(49, 19);
+            this.lbl8.TabIndex = 0;
+            this.lbl8.Text = "Theme";
+            this.lbl8.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // theme
             // 
@@ -93,14 +93,14 @@
             this.save.UseSelectable = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
-            // metroLabel2
+            // lbl1
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(22, 73);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(96, 19);
-            this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Server Settings";
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(22, 73);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(96, 19);
+            this.lbl1.TabIndex = 6;
+            this.lbl1.Text = "Server Settings";
             // 
             // password
             // 
@@ -133,16 +133,16 @@
             this.password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.password.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel3
+            // lbl6
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.ForeColor = System.Drawing.Color.White;
-            this.metroLabel3.Location = new System.Drawing.Point(51, 226);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(63, 19);
-            this.metroLabel3.TabIndex = 14;
-            this.metroLabel3.Text = "Password";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lbl6.AutoSize = true;
+            this.lbl6.ForeColor = System.Drawing.Color.White;
+            this.lbl6.Location = new System.Drawing.Point(51, 226);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(63, 19);
+            this.lbl6.TabIndex = 14;
+            this.lbl6.Text = "Password";
+            this.lbl6.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // uname
             // 
@@ -175,16 +175,16 @@
             this.uname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.uname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel4
+            // lbl5
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(51, 197);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(75, 19);
-            this.metroLabel4.TabIndex = 12;
-            this.metroLabel4.Text = "User Name";
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lbl5.AutoSize = true;
+            this.lbl5.ForeColor = System.Drawing.Color.White;
+            this.lbl5.Location = new System.Drawing.Point(51, 197);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(75, 19);
+            this.lbl5.TabIndex = 12;
+            this.lbl5.Text = "User Name";
+            this.lbl5.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // dname
             // 
@@ -217,16 +217,16 @@
             this.dname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.dname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel5
+            // lbl3
             // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.ForeColor = System.Drawing.Color.White;
-            this.metroLabel5.Location = new System.Drawing.Point(51, 139);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(103, 19);
-            this.metroLabel5.TabIndex = 10;
-            this.metroLabel5.Text = "Database Name";
-            this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lbl3.AutoSize = true;
+            this.lbl3.ForeColor = System.Drawing.Color.White;
+            this.lbl3.Location = new System.Drawing.Point(51, 139);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(103, 19);
+            this.lbl3.TabIndex = 10;
+            this.lbl3.Text = "Database Name";
+            this.lbl3.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // sname
             // 
@@ -259,25 +259,25 @@
             this.sname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.sname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel6
+            // lbl2
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.ForeColor = System.Drawing.Color.White;
-            this.metroLabel6.Location = new System.Drawing.Point(51, 110);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel6.TabIndex = 8;
-            this.metroLabel6.Text = "Server Name";
-            this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lbl2.AutoSize = true;
+            this.lbl2.ForeColor = System.Drawing.Color.White;
+            this.lbl2.Location = new System.Drawing.Point(51, 110);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(87, 19);
+            this.lbl2.TabIndex = 8;
+            this.lbl2.Text = "Server Name";
+            this.lbl2.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroLabel7
+            // lbl7
             // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(17, 266);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(103, 19);
-            this.metroLabel7.TabIndex = 16;
-            this.metroLabel7.Text = "General Settings";
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(17, 266);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(103, 19);
+            this.lbl7.TabIndex = 16;
+            this.lbl7.Text = "General Settings";
             // 
             // pnumber
             // 
@@ -310,16 +310,16 @@
             this.pnumber.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.pnumber.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel8
+            // lbl4
             // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.ForeColor = System.Drawing.Color.White;
-            this.metroLabel8.Location = new System.Drawing.Point(51, 168);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel8.TabIndex = 17;
-            this.metroLabel8.Text = "Port Number";
-            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lbl4.AutoSize = true;
+            this.lbl4.ForeColor = System.Drawing.Color.White;
+            this.lbl4.Location = new System.Drawing.Point(51, 168);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(87, 19);
+            this.lbl4.TabIndex = 17;
+            this.lbl4.Text = "Port Number";
+            this.lbl4.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // SettingForm
             // 
@@ -327,25 +327,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 410);
             this.Controls.Add(this.pnumber);
-            this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl7);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.lbl6);
             this.Controls.Add(this.uname);
-            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.lbl5);
             this.Controls.Add(this.dname);
-            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.lbl3);
             this.Controls.Add(this.sname);
-            this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.save);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.theme);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.lbl8);
             this.MaximizeBox = false;
             this.Name = "SettingForm";
             this.Resizable = false;
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.SettingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,21 +354,21 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel lbl8;
         private MetroFramework.Controls.MetroComboBox theme;
         private MetroFramework.Controls.MetroButton cancel;
         private MetroFramework.Controls.MetroButton save;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel lbl1;
         private MetroFramework.Controls.MetroTextBox password;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel lbl6;
         private MetroFramework.Controls.MetroTextBox uname;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel lbl5;
         private MetroFramework.Controls.MetroTextBox dname;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel lbl3;
         private MetroFramework.Controls.MetroTextBox sname;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel lbl2;
+        private MetroFramework.Controls.MetroLabel lbl7;
         private MetroFramework.Controls.MetroTextBox pnumber;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel lbl4;
     }
 }
