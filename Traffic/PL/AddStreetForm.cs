@@ -92,12 +92,16 @@ namespace Traffic.PL
 
             ////////////////////////Add Intersections in database///////////////////////
             Intersection tempForIntersection = new Intersection();
-            for (int rows = 0; rows < AddIntersectionForm.intersect.Count; rows++)
+            for (int rows = 0; rows < intersections.Rows.Count - 1; rows++)
             {
-
-                tempForIntersection.numberOfIntersection = AddIntersectionForm.intersect[rows].numberOfIntersection;
-                tempForIntersection.pointIndex = AddIntersectionForm.intersect[rows].pointIndex;
-                // tempForIntersection.caseOfIntersection = AddIntersectionForm.intersect[rows].caseOfIntersection;
+                tempForIntersection.numberOfIntersection = rows;
+                tempForIntersection.pointIndex = Int32.Parse(intersections.Rows[rows].Cells[0].Value.ToString());
+                tempForIntersection.case1 = Int32.Parse(intersections.Rows[rows].Cells[1].Value.ToString());
+                tempForIntersection.case2 = Int32.Parse(intersections.Rows[rows].Cells[2].Value.ToString());
+                tempForIntersection.case3 = Int32.Parse(intersections.Rows[rows].Cells[3].Value.ToString());
+                tempForIntersection.delayTime1 = Int32.Parse(intersections.Rows[rows].Cells[4].Value.ToString());
+                tempForIntersection.delayTime2 = Int32.Parse(intersections.Rows[rows].Cells[5].Value.ToString());
+                tempForIntersection.delayTime3 = Int32.Parse(intersections.Rows[rows].Cells[6].Value.ToString());
                 tempForIntersection.street = st;
                 db.intersctions.Add(tempForIntersection);
                 db.SaveChanges();
@@ -106,17 +110,17 @@ namespace Traffic.PL
             ////////////////////////Add Segments in database///////////////////////
             Segment tempSegment = new Segment();
             tempSegment.firstIntersection = 0;
-            tempSegment.secondIntersection = AddIntersectionForm.intersect[0].pointIndex;
+            tempSegment.secondIntersection = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString());
             for (int point = 1, intersect = 1; point <= AddPointsProgressForm.listOfPoint1.Count(); point++)  //from first point to last point in the same street
             {
-                if (point == tempSegment.secondIntersection && intersect < AddIntersectionForm.intersect.Count)
+                if (point == tempSegment.secondIntersection && intersect < intersections.Rows.Count - 1)
                 {
                     tempSegment.firstIntersection = tempSegment.secondIntersection;
-                    tempSegment.secondIntersection = AddIntersectionForm.intersect[intersect++].pointIndex;
+                    tempSegment.secondIntersection = Int32.Parse(intersections.Rows[intersect++].Cells[0].Value.ToString());
                 }
                 else if (point == tempSegment.secondIntersection)
                 {
-                    tempSegment.firstIntersection = AddIntersectionForm.intersect[--intersect].pointIndex;
+                    tempSegment.firstIntersection = Int32.Parse(intersections.Rows[--intersect].Cells[0].Value.ToString());
                     tempSegment.secondIntersection = 0;
                 }
                 tempSegment.street = st;
@@ -126,7 +130,6 @@ namespace Traffic.PL
                 db.SaveChanges();
             }
             db.SaveChanges();
-            AddIntersectionForm.intersect.RemoveRange(0, AddIntersectionForm.intersect.Count);
             AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);
             AddPointsProgressForm.listOfPoint2.RemoveRange(0, AddPointsProgressForm.listOfPoint2.Count);
 

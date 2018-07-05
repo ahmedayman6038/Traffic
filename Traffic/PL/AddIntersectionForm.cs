@@ -14,7 +14,7 @@ namespace Traffic.PL
   
     public partial class AddIntersectionForm : MetroForm
     {
-        public static List<IntersectionData> intersect = new List<IntersectionData>();
+       //public static List<IntersectionData> intersect = new List<IntersectionData>();
         public AddIntersectionForm()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Traffic.PL
 
         private void save_Click(object sender, EventArgs e)
         {
-            for (int rows = 0; rows < intersections.Rows.Count-1; rows++)
+           /* for (int rows = 0; rows < intersections.Rows.Count-1; rows++)
             {
                 IntersectionData temp=new IntersectionData();
                 temp.numberOfIntersection = rows + 1;
@@ -32,7 +32,7 @@ namespace Traffic.PL
                 intersect.Add(temp);
 
             }
-            this.Close();
+            this.Close();*/
         }
 
         private void intersections_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,12 +44,5 @@ namespace Traffic.PL
         {
             this.Close();
         }
-    }
-
-    public partial class IntersectionData
-    {
-        public int numberOfIntersection;
-        public int pointIndex;
-       public int caseOfIntersection;
     }
 }

@@ -96,5 +96,10 @@ namespace Traffic
                 Environment.Exit(0);
             }
         }
+
+        private void SettingForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
