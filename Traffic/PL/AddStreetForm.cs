@@ -141,21 +141,31 @@ namespace Traffic.PL
                 db.intersctions.Add(tempForIntersection);
                 db.SaveChanges();
             }
-            
+            ////////////////////////Add TrafficBoard in database///////////////////////
+            TrafficBoard tempTrafficBoard = new TrafficBoard();
+            for (int row = 0; row < AddSignsForm.boards.Count; row++)
+            {
+                tempTrafficBoard.street = st;
+                tempTrafficBoard.boardNumber = AddSignsForm.boards[row].boardNumber;
+                tempTrafficBoard.point1 = AddPointsProgressForm.listOfPoint1[Int32.Parse(AddSignsForm.boards[row].point1.name) - 1];
+                tempTrafficBoard.point2 = AddPointsProgressForm.listOfPoint2[Int32.Parse(AddSignsForm.boards[row].point2.name) - 1];
+                db.trafficBoard.Add(tempTrafficBoard);
+                db.SaveChanges();
+            }
             ////////////////////////Add Segments in database///////////////////////
             Segment tempSegment = new Segment();
             int first_intersection = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString());
-            int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count-1].Cells[0].Value.ToString());
+            int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count-2].Cells[0].Value.ToString());
             tempSegment.firstIntersection = first_intersection;
             tempSegment.secondIntersection = Int32.Parse(intersections.Rows[1].Cells[0].Value.ToString());
-            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()) , intersect = 1; ; point++)  //from first point to last point in the same street
+            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()) , intersect = 1;point <intersections.Rows.Count-1 ; point++)  //from first point to last point in the same street
             {
                 if (point == tempSegment.secondIntersection && intersect < intersections.Rows.Count - 1)
                 {
                     tempSegment.firstIntersection = tempSegment.secondIntersection;
                     tempSegment.secondIntersection = Int32.Parse(intersections.Rows[intersect++].Cells[0].Value.ToString());
                 }
-                else if (point == tempSegment.secondIntersection)
+                if (point == tempSegment.secondIntersection)
                 {
                     db.SaveChanges();
                     break;
@@ -167,16 +177,7 @@ namespace Traffic.PL
                 db.SaveChanges();
                
             }
-            ////////////////////////Add TrafficBoard in database///////////////////////
-            TrafficBoard tempTrafficBoard = new TrafficBoard();
-            for (int row = 0; row < AddSignsForm.boards.Count; row++)
-            {
-                tempTrafficBoard.boardNumber = AddSignsForm.boards[row].boardNumber;
-                tempTrafficBoard.point1 = AddPointsProgressForm.listOfPoint1[Int32.Parse(AddSignsForm.boards[row].point1.name) - 1];
-                tempTrafficBoard.point2 = AddPointsProgressForm.listOfPoint2[Int32.Parse(AddSignsForm.boards[row].point2.name) - 1];
-                db.trafficBoard.Add(tempTrafficBoard);
-                db.SaveChanges();
-            }
+           
             db.SaveChanges();
             AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);
             AddPointsProgressForm.listOfPoint2.RemoveRange(0, AddPointsProgressForm.listOfPoint2.Count);
