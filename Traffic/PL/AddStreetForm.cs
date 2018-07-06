@@ -158,7 +158,7 @@ namespace Traffic.PL
             int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count-2].Cells[0].Value.ToString());
             tempSegment.firstIntersection = first_intersection;
             tempSegment.secondIntersection = Int32.Parse(intersections.Rows[1].Cells[0].Value.ToString());
-            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()) , intersect = 1;point <intersections.Rows.Count-1 ; point++)  //from first point to last point in the same street
+            for (int point = first_intersection, intersect = 1;point <intersections.Rows.Count-1 ; point++)  //from first intersection to last intersection in the same street
             {
                 if (point == tempSegment.secondIntersection && intersect < intersections.Rows.Count - 1)
                 {
