@@ -191,6 +191,7 @@
             this.intersections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.intersections.Size = new System.Drawing.Size(753, 257);
             this.intersections.TabIndex = 8;
+            this.intersections.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.intersections_CellContentClick);
             // 
             // PNumber
             // 

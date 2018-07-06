@@ -63,7 +63,6 @@ F:\Traffic\Traffic\bin\Debug\EntityFramework.xml
 F:\Traffic\Traffic\bin\Debug\EntityFramework.SqlServer.xml
 F:\Traffic\Traffic\bin\Debug\MySql.Data.xml
 F:\Traffic\Traffic\obj\Debug\Traffic.csprojAssemblyReference.cache
-F:\Traffic\Traffic\obj\Debug\Traffic.PL.AddIntersectionForm.resources
 F:\Traffic\Traffic\obj\Debug\Traffic.PL.AddPointsProgressForm.resources
 F:\Traffic\Traffic\obj\Debug\Traffic.PL.AddStreetForm.resources
 F:\Traffic\Traffic\obj\Debug\Traffic.MainForm.resources
@@ -75,3 +74,4 @@ F:\Traffic\Traffic\obj\Debug\Traffic.csproj.CopyComplete
 F:\Traffic\Traffic\obj\Debug\Traffic.exe
 F:\Traffic\Traffic\obj\Debug\Traffic.pdb
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddSignsForm.resources
+F:\Traffic\Traffic\obj\Debug\Traffic.PL.AddSignsForm.resources
