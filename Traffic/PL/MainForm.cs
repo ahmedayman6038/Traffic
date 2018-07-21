@@ -74,9 +74,9 @@ namespace Traffic
             {
                 AddPointsProgressForm addPointsProgressForm = new AddPointsProgressForm(file.FileName);
                 addPointsProgressForm.Show();
+                AddStreetForm addStreetForm = new AddStreetForm();
+                addStreetForm.Show();
             }
-            AddStreetForm addStreetForm = new AddStreetForm();
-            addStreetForm.Show();
         }
         
 
