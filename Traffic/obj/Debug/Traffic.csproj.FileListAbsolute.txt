@@ -75,3 +75,15 @@ F:\Traffic\Traffic\obj\Debug\Traffic.exe
 F:\Traffic\Traffic\obj\Debug\Traffic.pdb
 E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.AddSignsForm.resources
 F:\Traffic\Traffic\obj\Debug\Traffic.PL.AddSignsForm.resources
+E:\Projects\Traffic\Traffic\bin\Debug\AjaxMin.dll
+E:\Projects\Traffic\Traffic\bin\Debug\GMap.NET.Core.dll
+E:\Projects\Traffic\Traffic\bin\Debug\GMap.NET.WindowsForms.dll
+E:\Projects\Traffic\Traffic\bin\Debug\GMap.NET.WindowsPresentation.dll
+E:\Projects\Traffic\Traffic\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.dll
+E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Projects\Traffic\Traffic\bin\Debug\Newtonsoft.Json.xml
+E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.xml
+E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.dll.config
+E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.Ahmed.resources

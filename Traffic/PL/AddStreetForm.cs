@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 using MetroFramework;
 using MetroFramework.Forms;
 using Traffic.DAL;
@@ -19,16 +23,15 @@ namespace Traffic.PL
         public AddStreetForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             db = TrafficDb.getConnection();
             if (Properties.Settings.Default.Theme == "Dark")
             {
                 this.Theme = MetroThemeStyle.Dark;
                 lbl1.Theme = MetroThemeStyle.Dark;
                 lbl2.Theme = MetroThemeStyle.Dark;
-                lbl3.Theme = MetroThemeStyle.Dark;
                 sname.Theme = MetroThemeStyle.Dark;
                 sdir.Theme = MetroThemeStyle.Dark;
-                addpoint.Theme = MetroThemeStyle.Dark;
                 save.Theme = MetroThemeStyle.Dark;
                 addsigns.Theme = MetroThemeStyle.Dark;
                 intersections.Theme = MetroThemeStyle.Dark;
@@ -39,10 +42,8 @@ namespace Traffic.PL
                 this.Theme = MetroThemeStyle.Light;
                 lbl1.Theme = MetroThemeStyle.Light;
                 lbl2.Theme = MetroThemeStyle.Light;
-                lbl3.Theme = MetroThemeStyle.Light;
                 sname.Theme = MetroThemeStyle.Light;
                 sdir.Theme = MetroThemeStyle.Light;
-                addpoint.Theme = MetroThemeStyle.Light;
                 save.Theme = MetroThemeStyle.Light;
                 addsigns.Theme = MetroThemeStyle.Light;
                 intersections.Theme = MetroThemeStyle.Light;
@@ -97,7 +98,7 @@ namespace Traffic.PL
 
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
-           
+
             /////////////////////////Add Street in database/////////////////////////////
             Street st = new Street();
             st.streetName = sname.Text;
@@ -155,10 +156,10 @@ namespace Traffic.PL
             ////////////////////////Add Segments in database///////////////////////
             Segment tempSegment = new Segment();
             int first_intersection = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString());
-            int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count-2].Cells[0].Value.ToString());
+            int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count - 2].Cells[0].Value.ToString());
             tempSegment.firstIntersection = first_intersection;
             tempSegment.secondIntersection = Int32.Parse(intersections.Rows[1].Cells[0].Value.ToString());
-            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()) , intersect = 1;point <intersections.Rows.Count-1 ; point++)  //from first point to last point in the same street
+            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()), intersect = 1; point < intersections.Rows.Count - 1; point++)  //from first point to last point in the same street
             {
                 if (point == tempSegment.secondIntersection && intersect < intersections.Rows.Count - 1)
                 {
@@ -175,9 +176,9 @@ namespace Traffic.PL
                 tempSegment.point2 = AddPointsProgressForm.listOfPoint2[point - 1];
                 db.segment.Add(tempSegment);
                 db.SaveChanges();
-               
+
             }
-           
+
             db.SaveChanges();
             AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);
             AddPointsProgressForm.listOfPoint2.RemoveRange(0, AddPointsProgressForm.listOfPoint2.Count);
@@ -188,6 +189,44 @@ namespace Traffic.PL
         private void intersections_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void metroTile2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void map_Load(object sender, EventArgs e)
+        {
+            map.DragButton = MouseButtons.Left;
+
+            //use google provider
+            map.MapProvider = GoogleMapProvider.Instance;
+            //get tiles from server only
+            map.Manager.Mode = AccessMode.ServerOnly;
+            //not use proxy
+            GMapProvider.WebProxy = null;
+            //center map on moscow
+            map.Position = new PointLatLng(37.31917, -122.04511);
+
+            //zoom min/max; default both = 2
+            map.MinZoom = 1;
+            map.MaxZoom = 20;
+            //set zoom
+            map.Zoom = 15;
+            var point = new PointLatLng(37.31917, -122.04511);
+            GMapMarker mapMarker = new GMarkerGoogle(point, GMarkerGoogleType.red_dot);
+            var point2 = new PointLatLng(37.36764, -122.16986);
+            GMapMarker mapMarker2 = new GMarkerGoogle(point2, GMarkerGoogleType.red_dot);
+            var point3 = new PointLatLng(37.37138, -122.14286);
+            GMapMarker mapMarker3 = new GMarkerGoogle(point3, GMarkerGoogleType.red_dot);
+            GMapOverlay mapOverlay = new GMapOverlay("marker");
+            mapOverlay.Markers.Add(mapMarker);
+            mapOverlay.Markers.Add(mapMarker2);
+
+            mapOverlay.Markers.Add(mapMarker3);
+
+            map.Overlays.Add(mapOverlay);
         }
     }
 }
