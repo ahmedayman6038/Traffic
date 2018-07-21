@@ -65,6 +65,16 @@ namespace Traffic
 
         private void metroTile3_Click(object sender, EventArgs e)
         {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Allowed Extension|*.xml;*.gpx";
+            file.FilterIndex = 2;
+            file.RestoreDirectory = true;
+            DialogResult result = file.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                AddPointsProgressForm addPointsProgressForm = new AddPointsProgressForm(file.FileName);
+                addPointsProgressForm.Show();
+            }
             AddStreetForm addStreetForm = new AddStreetForm();
             addStreetForm.Show();
         }

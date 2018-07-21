@@ -52,16 +52,16 @@ namespace Traffic.PL
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Allowed Extension|*.xml;*.gpx";
-            file.FilterIndex = 2;
-            file.RestoreDirectory = true;
-            DialogResult result = file.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                AddPointsProgressForm addPointsProgressForm = new AddPointsProgressForm(file.FileName);
-                addPointsProgressForm.Show();
-            }
+            //OpenFileDialog file = new OpenFileDialog();
+            //file.Filter = "Allowed Extension|*.xml;*.gpx";
+            //file.FilterIndex = 2;
+            //file.RestoreDirectory = true;
+            //DialogResult result = file.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    AddPointsProgressForm addPointsProgressForm = new AddPointsProgressForm(file.FileName);
+            //    addPointsProgressForm.Show();
+            //}
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
@@ -139,11 +139,7 @@ namespace Traffic.PL
             int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count - 2].Cells[0].Value.ToString());
             tempSegment.firstIntersection = first_intersection;
             tempSegment.secondIntersection = Int32.Parse(intersections.Rows[1].Cells[0].Value.ToString());
-<<<<<<< HEAD
-            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()), intersect = 1; point < intersections.Rows.Count - 1; point++)  //from first point to last point in the same street
-=======
             for (int point = first_intersection, intersect =1; ; point++)  //from first intersection to last intersection in the same street
->>>>>>> 5177bae9b6dcda642745045c7f0d13555d51cf42
             {
                 if (point == tempSegment.secondIntersection)
                 {
@@ -163,9 +159,7 @@ namespace Traffic.PL
                 db.SaveChanges();
 
             }
-<<<<<<< HEAD
 
-=======
             ////////////////////////Add TrafficBoard in database///////////////////////
             TrafficBoard tempTrafficBoard = new TrafficBoard();
             for (int row = 0; row < AddSignsForm.boards.Count; row++)
@@ -177,7 +171,6 @@ namespace Traffic.PL
                 db.trafficBoard.Add(tempTrafficBoard);
                 db.SaveChanges();
             }
->>>>>>> 5177bae9b6dcda642745045c7f0d13555d51cf42
             db.SaveChanges();
             AddSignsForm.boards.RemoveRange(0, AddSignsForm.boards.Count);
             AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);

@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.intersections = new MetroFramework.Controls.MetroGrid();
             this.pnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.case1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,20 +42,18 @@
             this.delay2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delay3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.addsigns = new MetroFramework.Controls.MetroTile();
+            this.save = new MetroFramework.Controls.MetroTile();
             this.sdir = new MetroFramework.Controls.MetroTextBox();
             this.lbl2 = new MetroFramework.Controls.MetroLabel();
             this.sname = new MetroFramework.Controls.MetroTextBox();
             this.lbl1 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.save = new MetroFramework.Controls.MetroTile();
-            this.addsigns = new MetroFramework.Controls.MetroTile();
             this.metroPanel1.SuspendLayout();
+            this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intersections)).BeginInit();
             this.metroPanel2.SuspendLayout();
-            this.metroPanel3.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,21 +73,37 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroPanel3
+            // 
+            this.metroPanel3.Controls.Add(this.intersections);
+            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(442, 0);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(482, 201);
+            this.metroPanel3.TabIndex = 15;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
             // intersections
             // 
             this.intersections.AllowUserToResizeRows = false;
+            this.intersections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.intersections.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.intersections.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.intersections.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.intersections.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.intersections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.intersections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.intersections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.intersections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pnumber,
@@ -98,32 +113,32 @@
             this.delay1,
             this.delay2,
             this.delay3});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.intersections.DefaultCellStyle = dataGridViewCellStyle8;
-            this.intersections.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.intersections.DefaultCellStyle = dataGridViewCellStyle5;
+            this.intersections.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.intersections.EnableHeadersVisualStyles = false;
             this.intersections.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.intersections.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.intersections.Location = new System.Drawing.Point(0, 0);
+            this.intersections.Location = new System.Drawing.Point(0, 6);
             this.intersections.Name = "intersections";
             this.intersections.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.intersections.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.intersections.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.intersections.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.intersections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.intersections.Size = new System.Drawing.Size(556, 201);
+            this.intersections.Size = new System.Drawing.Size(482, 195);
             this.intersections.TabIndex = 13;
             // 
             // pnumber
@@ -176,11 +191,38 @@
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(368, 201);
+            this.metroPanel2.Size = new System.Drawing.Size(442, 201);
             this.metroPanel2.TabIndex = 14;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // addsigns
+            // 
+            this.addsigns.ActiveControl = null;
+            this.addsigns.Location = new System.Drawing.Point(143, 97);
+            this.addsigns.Name = "addsigns";
+            this.addsigns.Size = new System.Drawing.Size(130, 101);
+            this.addsigns.TabIndex = 18;
+            this.addsigns.Text = "Add Sign";
+            this.addsigns.TileImage = global::Traffic.Properties.Resources.sign;
+            this.addsigns.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addsigns.UseSelectable = true;
+            this.addsigns.UseTileImage = true;
+            this.addsigns.Click += new System.EventHandler(this.metroTile2_Click_1);
+            // 
+            // save
+            // 
+            this.save.ActiveControl = null;
+            this.save.Location = new System.Drawing.Point(7, 97);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(130, 101);
+            this.save.TabIndex = 17;
+            this.save.Text = "Save";
+            this.save.TileImage = global::Traffic.Properties.Resources.save;
+            this.save.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.save.UseSelectable = true;
+            this.save.UseTileImage = true;
             // 
             // sdir
             // 
@@ -188,7 +230,7 @@
             // 
             // 
             this.sdir.CustomButton.Image = null;
-            this.sdir.CustomButton.Location = new System.Drawing.Point(230, 1);
+            this.sdir.CustomButton.Location = new System.Drawing.Point(293, 1);
             this.sdir.CustomButton.Name = "";
             this.sdir.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.sdir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -197,7 +239,7 @@
             this.sdir.CustomButton.UseSelectable = true;
             this.sdir.CustomButton.Visible = false;
             this.sdir.Lines = new string[0];
-            this.sdir.Location = new System.Drawing.Point(116, 32);
+            this.sdir.Location = new System.Drawing.Point(121, 35);
             this.sdir.MaxLength = 32767;
             this.sdir.Name = "sdir";
             this.sdir.PasswordChar = '\0';
@@ -206,7 +248,7 @@
             this.sdir.SelectionLength = 0;
             this.sdir.SelectionStart = 0;
             this.sdir.ShortcutsEnabled = true;
-            this.sdir.Size = new System.Drawing.Size(252, 23);
+            this.sdir.Size = new System.Drawing.Size(315, 23);
             this.sdir.TabIndex = 16;
             this.sdir.UseSelectable = true;
             this.sdir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -215,7 +257,7 @@
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(7, 32);
+            this.lbl2.Location = new System.Drawing.Point(12, 35);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(99, 19);
             this.lbl2.TabIndex = 15;
@@ -227,7 +269,7 @@
             // 
             // 
             this.sname.CustomButton.Image = null;
-            this.sname.CustomButton.Location = new System.Drawing.Point(230, 1);
+            this.sname.CustomButton.Location = new System.Drawing.Point(293, 1);
             this.sname.CustomButton.Name = "";
             this.sname.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.sname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -236,7 +278,7 @@
             this.sname.CustomButton.UseSelectable = true;
             this.sname.CustomButton.Visible = false;
             this.sname.Lines = new string[0];
-            this.sname.Location = new System.Drawing.Point(116, 3);
+            this.sname.Location = new System.Drawing.Point(121, 6);
             this.sname.MaxLength = 32767;
             this.sname.Name = "sname";
             this.sname.PasswordChar = '\0';
@@ -245,7 +287,7 @@
             this.sname.SelectionLength = 0;
             this.sname.SelectionStart = 0;
             this.sname.ShortcutsEnabled = true;
-            this.sname.Size = new System.Drawing.Size(252, 23);
+            this.sname.Size = new System.Drawing.Size(315, 23);
             this.sname.TabIndex = 14;
             this.sname.UseSelectable = true;
             this.sname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -254,38 +296,22 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(7, 3);
+            this.lbl1.Location = new System.Drawing.Point(12, 6);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(83, 19);
             this.lbl1.TabIndex = 13;
             this.lbl1.Text = "Street Name";
             // 
-            // metroPanel3
-            // 
-            this.metroPanel3.Controls.Add(this.intersections);
-            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(368, 0);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(556, 201);
-            this.metroPanel3.TabIndex = 15;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
-            // 
             // metroPanel4
             // 
-            this.metroPanel4.Controls.Add(this.splitter1);
             this.metroPanel4.Controls.Add(this.map);
-            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
             this.metroPanel4.Location = new System.Drawing.Point(20, 60);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(924, 298);
+            this.metroPanel4.Size = new System.Drawing.Size(924, 304);
             this.metroPanel4.TabIndex = 1;
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
@@ -314,39 +340,10 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(924, 298);
+            this.map.Size = new System.Drawing.Size(924, 304);
             this.map.TabIndex = 2;
             this.map.Zoom = 0D;
             this.map.Load += new System.EventHandler(this.map_Load);
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 298);
-            this.splitter1.TabIndex = 3;
-            this.splitter1.TabStop = false;
-            // 
-            // save
-            // 
-            this.save.ActiveControl = null;
-            this.save.Location = new System.Drawing.Point(7, 97);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(130, 101);
-            this.save.TabIndex = 17;
-            this.save.Text = "Save";
-            this.save.UseSelectable = true;
-            // 
-            // addsigns
-            // 
-            this.addsigns.ActiveControl = null;
-            this.addsigns.Location = new System.Drawing.Point(143, 100);
-            this.addsigns.Name = "addsigns";
-            this.addsigns.Size = new System.Drawing.Size(130, 101);
-            this.addsigns.TabIndex = 18;
-            this.addsigns.Text = "Add Sign";
-            this.addsigns.UseSelectable = true;
-            this.addsigns.Click += new System.EventHandler(this.metroTile2_Click_1);
             // 
             // AddStreetForm
             // 
@@ -358,10 +355,10 @@
             this.Name = "AddStreetForm";
             this.Text = "Add Street";
             this.metroPanel1.ResumeLayout(false);
+            this.metroPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.intersections)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            this.metroPanel3.ResumeLayout(false);
             this.metroPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -386,7 +383,6 @@
         private MetroFramework.Controls.MetroLabel lbl1;
         private MetroFramework.Controls.MetroPanel metroPanel4;
         private GMap.NET.WindowsForms.GMapControl map;
-        private System.Windows.Forms.Splitter splitter1;
         private MetroFramework.Controls.MetroTile addsigns;
         private MetroFramework.Controls.MetroTile save;
     }
