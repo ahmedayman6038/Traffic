@@ -102,17 +102,7 @@ namespace Traffic.PL
             /////////////////////////Add Street in database/////////////////////////////
             Street st = new Street();
             st.streetName = sname.Text;
-            string dir = sdir.Text;
-            //Horizontal = 2
-            //Vertical = 1
-            if (dir.Equals("Horizontal"))
-            {
-                st.direction = 2;
-            }
-            else
-            {
-                st.direction = 1;
-            }
+            st.direction = Int32.Parse(sdir.Text);
             db.streets.Add(st);
             db.SaveChanges();
 
@@ -130,7 +120,7 @@ namespace Traffic.PL
             Intersection tempForIntersection = new Intersection();
             for (int rows = 0; rows < intersections.Rows.Count - 1; rows++)
             {
-                tempForIntersection.numberOfIntersection = rows;
+                tempForIntersection.numberOfIntersection = rows+1;
                 tempForIntersection.pointIndex = Int32.Parse(intersections.Rows[rows].Cells[0].Value.ToString());
                 tempForIntersection.case1 = Int32.Parse(intersections.Rows[rows].Cells[1].Value.ToString());
                 tempForIntersection.case2 = Int32.Parse(intersections.Rows[rows].Cells[2].Value.ToString());
@@ -142,6 +132,40 @@ namespace Traffic.PL
                 db.intersctions.Add(tempForIntersection);
                 db.SaveChanges();
             }
+            
+            ////////////////////////Add Segments in database///////////////////////
+            Segment tempSegment = new Segment();
+            int first_intersection = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString());
+            int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count - 2].Cells[0].Value.ToString());
+            tempSegment.firstIntersection = first_intersection;
+            tempSegment.secondIntersection = Int32.Parse(intersections.Rows[1].Cells[0].Value.ToString());
+<<<<<<< HEAD
+            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()), intersect = 1; point < intersections.Rows.Count - 1; point++)  //from first point to last point in the same street
+=======
+            for (int point = first_intersection, intersect =1; ; point++)  //from first intersection to last intersection in the same street
+>>>>>>> 5177bae9b6dcda642745045c7f0d13555d51cf42
+            {
+                if (point == tempSegment.secondIntersection)
+                {
+                    tempSegment.firstIntersection = tempSegment.secondIntersection;
+                    if (tempSegment.firstIntersection == last_intersection)
+                    {
+                        db.SaveChanges();
+                        break;
+                    }
+                    tempSegment.secondIntersection = Int32.Parse(intersections.Rows[++intersect].Cells[0].Value.ToString());
+                }
+               
+                tempSegment.street = st;
+                tempSegment.point1 = AddPointsProgressForm.listOfPoint1[point - 1];
+                tempSegment.point2 = AddPointsProgressForm.listOfPoint2[point - 1];
+                db.segment.Add(tempSegment);
+                db.SaveChanges();
+
+            }
+<<<<<<< HEAD
+
+=======
             ////////////////////////Add TrafficBoard in database///////////////////////
             TrafficBoard tempTrafficBoard = new TrafficBoard();
             for (int row = 0; row < AddSignsForm.boards.Count; row++)
@@ -153,33 +177,9 @@ namespace Traffic.PL
                 db.trafficBoard.Add(tempTrafficBoard);
                 db.SaveChanges();
             }
-            ////////////////////////Add Segments in database///////////////////////
-            Segment tempSegment = new Segment();
-            int first_intersection = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString());
-            int last_intersection = Int32.Parse(intersections.Rows[intersections.Rows.Count - 2].Cells[0].Value.ToString());
-            tempSegment.firstIntersection = first_intersection;
-            tempSegment.secondIntersection = Int32.Parse(intersections.Rows[1].Cells[0].Value.ToString());
-            for (int point = Int32.Parse(intersections.Rows[0].Cells[0].Value.ToString()), intersect = 1; point < intersections.Rows.Count - 1; point++)  //from first point to last point in the same street
-            {
-                if (point == tempSegment.secondIntersection && intersect < intersections.Rows.Count - 1)
-                {
-                    tempSegment.firstIntersection = tempSegment.secondIntersection;
-                    tempSegment.secondIntersection = Int32.Parse(intersections.Rows[intersect++].Cells[0].Value.ToString());
-                }
-                if (point == tempSegment.secondIntersection)
-                {
-                    db.SaveChanges();
-                    break;
-                }
-                tempSegment.street = st;
-                tempSegment.point1 = AddPointsProgressForm.listOfPoint1[point - 1];
-                tempSegment.point2 = AddPointsProgressForm.listOfPoint2[point - 1];
-                db.segment.Add(tempSegment);
-                db.SaveChanges();
-
-            }
-
+>>>>>>> 5177bae9b6dcda642745045c7f0d13555d51cf42
             db.SaveChanges();
+            AddSignsForm.boards.RemoveRange(0, AddSignsForm.boards.Count);
             AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);
             AddPointsProgressForm.listOfPoint2.RemoveRange(0, AddPointsProgressForm.listOfPoint2.Count);
 

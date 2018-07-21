@@ -27,9 +27,10 @@ namespace Traffic.PL
 
         private void close_Click(object sender, EventArgs e)
         {
-            TrafficBoard temp = new TrafficBoard();
+          
             for (int rows = 0; rows < signs.Rows.Count - 1; rows++)
             {
+                TrafficBoard temp = new TrafficBoard();
                 Point1 pt1 = new Point1();
                 pt1.name = signs.Rows[rows].Cells[0].Value.ToString();
                 temp.point1 = pt1;
