@@ -98,6 +98,8 @@ namespace Traffic.PL
                 }
                 operationLabel.Text = "Done.";
                 operationLabel.Refresh();
+                AddStreetForm addStreetForm = new AddStreetForm();
+                addStreetForm.Show();
             }
             catch (Exception ex)
             {

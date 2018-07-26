@@ -53,7 +53,7 @@ namespace Traffic.PL
         private void metroTile2_Click_1(object sender, EventArgs e)
         {
             AddSignsForm addSignsForm = new AddSignsForm();
-            addSignsForm.Show();
+            addSignsForm.Show(this);
         }
 
         private void map_Load(object sender, EventArgs e)
