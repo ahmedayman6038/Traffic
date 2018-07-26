@@ -34,13 +34,6 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.intersections = new MetroFramework.Controls.MetroGrid();
-            this.pnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.case1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.case2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Case3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delay1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delay2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delay3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.addsigns = new MetroFramework.Controls.MetroTile();
             this.save = new MetroFramework.Controls.MetroTile();
@@ -51,6 +44,13 @@
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.map = new GMap.NET.WindowsForms.GMapControl();
             this.IntersectionNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.case1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.case2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Case3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delay1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delay2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delay3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intersections)).BeginInit();
@@ -107,14 +107,14 @@
             this.intersections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.intersections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.intersections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IntersectionNumber,
             this.pnumber,
             this.case1,
             this.case2,
             this.Case3,
             this.delay1,
             this.delay2,
-            this.delay3,
-            this.IntersectionNumber});
+            this.delay3});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -142,41 +142,6 @@
             this.intersections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.intersections.Size = new System.Drawing.Size(482, 195);
             this.intersections.TabIndex = 13;
-            // 
-            // pnumber
-            // 
-            this.pnumber.HeaderText = "Point Number";
-            this.pnumber.Name = "pnumber";
-            // 
-            // case1
-            // 
-            this.case1.HeaderText = "Case 1";
-            this.case1.Name = "case1";
-            // 
-            // case2
-            // 
-            this.case2.HeaderText = "Case 2";
-            this.case2.Name = "case2";
-            // 
-            // Case3
-            // 
-            this.Case3.HeaderText = "Case 3";
-            this.Case3.Name = "Case3";
-            // 
-            // delay1
-            // 
-            this.delay1.HeaderText = "Delay 1";
-            this.delay1.Name = "delay1";
-            // 
-            // delay2
-            // 
-            this.delay2.HeaderText = "Delay 2";
-            this.delay2.Name = "delay2";
-            // 
-            // delay3
-            // 
-            this.delay3.HeaderText = "Delay 3";
-            this.delay3.Name = "delay3";
             // 
             // metroPanel2
             // 
@@ -353,6 +318,41 @@
             this.IntersectionNumber.HeaderText = "Intersection Number";
             this.IntersectionNumber.Name = "IntersectionNumber";
             // 
+            // pnumber
+            // 
+            this.pnumber.HeaderText = "Point Number";
+            this.pnumber.Name = "pnumber";
+            // 
+            // case1
+            // 
+            this.case1.HeaderText = "Case 1";
+            this.case1.Name = "case1";
+            // 
+            // case2
+            // 
+            this.case2.HeaderText = "Case 2";
+            this.case2.Name = "case2";
+            // 
+            // Case3
+            // 
+            this.Case3.HeaderText = "Case 3";
+            this.Case3.Name = "Case3";
+            // 
+            // delay1
+            // 
+            this.delay1.HeaderText = "Delay 1";
+            this.delay1.Name = "delay1";
+            // 
+            // delay2
+            // 
+            this.delay2.HeaderText = "Delay 2";
+            this.delay2.Name = "delay2";
+            // 
+            // delay3
+            // 
+            this.delay3.HeaderText = "Delay 3";
+            this.delay3.Name = "delay3";
+            // 
             // AddStreetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,13 +376,6 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroGrid intersections;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pnumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn case1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn case2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Case3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delay1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delay2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delay3;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroTextBox sdir;
@@ -394,5 +387,12 @@
         private MetroFramework.Controls.MetroTile addsigns;
         private MetroFramework.Controls.MetroTile save;
         private System.Windows.Forms.DataGridViewTextBoxColumn IntersectionNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pnumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn case1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn case2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Case3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn delay1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn delay2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn delay3;
     }
 }
