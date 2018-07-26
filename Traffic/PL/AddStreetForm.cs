@@ -67,25 +67,24 @@ namespace Traffic.PL
             //not use proxy
             GMapProvider.WebProxy = null;
             //center map on moscow
-            map.Position = new PointLatLng(37.31917, -122.04511);
+            double initial_lat = AddPointsProgressForm.AllPoints[0].lat;
+            double initial_lon = AddPointsProgressForm.AllPoints[0].lon;
+            map.Position = new PointLatLng(initial_lat, initial_lon);
 
             //zoom min/max; default both = 2
             map.MinZoom = 1;
             map.MaxZoom = 20;
             //set zoom
             map.Zoom = 15;
-            var point = new PointLatLng(37.31917, -122.04511);
-            GMapMarker mapMarker = new GMarkerGoogle(point, GMarkerGoogleType.red_dot);
-            var point2 = new PointLatLng(37.36764, -122.16986);
-            GMapMarker mapMarker2 = new GMarkerGoogle(point2, GMarkerGoogleType.red_dot);
-            var point3 = new PointLatLng(37.37138, -122.14286);
-            GMapMarker mapMarker3 = new GMarkerGoogle(point3, GMarkerGoogleType.red_dot);
             GMapOverlay mapOverlay = new GMapOverlay("marker");
-            mapOverlay.Markers.Add(mapMarker);
-            mapOverlay.Markers.Add(mapMarker2);
-
-            mapOverlay.Markers.Add(mapMarker3);
-
+            for (int i=0;i<AddPointsProgressForm.AllPoints.Count;i++)
+            {
+                double temp_lat = AddPointsProgressForm.AllPoints[i].lat;
+                double temp_lon = AddPointsProgressForm.AllPoints[i].lon;
+                var point = new PointLatLng(temp_lat, temp_lon);
+                GMapMarker mapMarker = new GMarkerGoogle(point, GMarkerGoogleType.red_dot);
+                mapOverlay.Markers.Add(mapMarker);
+            }
             map.Overlays.Add(mapOverlay);
         }
 
@@ -99,12 +98,27 @@ namespace Traffic.PL
             db.SaveChanges();
 
             ////////////////////////Add points in database///////////////////////
-            for (int rows = 0; rows < AddPointsProgressForm.listOfPoint1.Count; rows++)
+             List<Point1> listOfPoint1 = new List<Point1>();
+             List<Point2> listOfPoint2 = new List<Point2>();
+            for (int rows = 0; rows < AddPointsProgressForm.AllPoints.Count-1; rows++)
             {
-                AddPointsProgressForm.listOfPoint1[rows].street = st;
-                AddPointsProgressForm.listOfPoint2[rows].street = st;
-                db.points1.Add(AddPointsProgressForm.listOfPoint1[rows]);
-                db.points2.Add(AddPointsProgressForm.listOfPoint2[rows]);
+                AddPointsProgressForm.AllPoints[rows].street = st;
+                db.points1.Add(AddPointsProgressForm.AllPoints[rows]);
+                listOfPoint1.Add(AddPointsProgressForm.AllPoints[rows]);
+                db.SaveChanges();
+            }
+            
+            for (int rows = 1; rows < AddPointsProgressForm.AllPoints.Count; rows++)
+            {
+                AddPointsProgressForm.AllPoints[rows].street = st;
+                Point2 point2 = new Point2();
+                point2.id= AddPointsProgressForm.AllPoints[rows].id;
+                point2.lat= AddPointsProgressForm.AllPoints[rows].lat;
+                point2.lon= AddPointsProgressForm.AllPoints[rows].lon;
+                point2.name= AddPointsProgressForm.AllPoints[rows].name;
+                point2.elev = AddPointsProgressForm.AllPoints[rows].elev;
+                db.points2.Add(point2);
+                listOfPoint2.Add(point2);
                 db.SaveChanges();
             }
 
@@ -145,8 +159,8 @@ namespace Traffic.PL
                 }
 
                 tempSegment.street = st;
-                tempSegment.point1 = AddPointsProgressForm.listOfPoint1[point - 1];
-                tempSegment.point2 = AddPointsProgressForm.listOfPoint2[point - 1];
+                tempSegment.point1 = listOfPoint1[point - 1];
+                tempSegment.point2 = listOfPoint2[point - 1];
                 db.segment.Add(tempSegment);
                 db.SaveChanges();
 
@@ -158,15 +172,15 @@ namespace Traffic.PL
             {
                 tempTrafficBoard.street = st;
                 tempTrafficBoard.boardNumber = AddSignsForm.boards[row].boardNumber;
-                tempTrafficBoard.point1 = AddPointsProgressForm.listOfPoint1[Int32.Parse(AddSignsForm.boards[row].point1.name) - 1];
-                tempTrafficBoard.point2 = AddPointsProgressForm.listOfPoint2[Int32.Parse(AddSignsForm.boards[row].point2.name) - 1];
+                tempTrafficBoard.point1 = listOfPoint1[Int32.Parse(AddSignsForm.boards[row].point1.name) - 1];
+                tempTrafficBoard.point2 = listOfPoint2[Int32.Parse(AddSignsForm.boards[row].point2.name) - 1];
                 db.trafficBoard.Add(tempTrafficBoard);
                 db.SaveChanges();
             }
             db.SaveChanges();
             AddSignsForm.boards.RemoveRange(0, AddSignsForm.boards.Count);
-            AddPointsProgressForm.listOfPoint1.RemoveRange(0, AddPointsProgressForm.listOfPoint1.Count);
-            AddPointsProgressForm.listOfPoint2.RemoveRange(0, AddPointsProgressForm.listOfPoint2.Count);
+            listOfPoint1.RemoveRange(0,listOfPoint1.Count);
+            listOfPoint2.RemoveRange(0,listOfPoint2.Count);
 
             this.Close();
         }
