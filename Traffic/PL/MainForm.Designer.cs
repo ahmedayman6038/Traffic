@@ -34,7 +34,6 @@
             this.connected = new MetroFramework.Controls.MetroRadioButton();
             this.Settings = new MetroFramework.Controls.MetroTile();
             this.AddStreet = new MetroFramework.Controls.MetroTile();
-            this.UpdateStreet = new MetroFramework.Controls.MetroTile();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +96,7 @@
             // Settings
             // 
             this.Settings.ActiveControl = null;
-            this.Settings.Location = new System.Drawing.Point(315, 84);
+            this.Settings.Location = new System.Drawing.Point(169, 84);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(140, 130);
             this.Settings.TabIndex = 4;
@@ -123,20 +122,6 @@
             this.AddStreet.UseTileImage = true;
             this.AddStreet.Click += new System.EventHandler(this.metroTile3_Click);
             // 
-            // UpdateStreet
-            // 
-            this.UpdateStreet.ActiveControl = null;
-            this.UpdateStreet.Location = new System.Drawing.Point(169, 84);
-            this.UpdateStreet.Name = "UpdateStreet";
-            this.UpdateStreet.Size = new System.Drawing.Size(140, 130);
-            this.UpdateStreet.TabIndex = 0;
-            this.UpdateStreet.Text = "Update Street";
-            this.UpdateStreet.TileImage = global::Traffic.Properties.Resources.refresh;
-            this.UpdateStreet.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.UpdateStreet.UseSelectable = true;
-            this.UpdateStreet.UseTileImage = true;
-            this.UpdateStreet.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,7 +130,6 @@
             this.Controls.Add(this.Settings);
             this.Controls.Add(this.AddStreet);
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.UpdateStreet);
             this.Name = "MainForm";
             this.Text = "Traffic";
             this.panel.ResumeLayout(false);
@@ -155,8 +139,6 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroTile UpdateStreet;
         private MetroFramework.Controls.MetroPanel panel;
         private MetroFramework.Controls.MetroRadioButton connected;
         private MetroFramework.Controls.MetroTile AddStreet;

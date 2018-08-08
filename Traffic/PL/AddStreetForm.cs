@@ -50,6 +50,10 @@ namespace Traffic.PL
             }
         }
 
+
+        /**
+         * Add Sign Form
+         * */
         private void metroTile2_Click_1(object sender, EventArgs e)
         {
             AddSignsForm addSignsForm = new AddSignsForm();
@@ -88,6 +92,9 @@ namespace Traffic.PL
             map.Overlays.Add(mapOverlay);
         }
 
+        /**
+         * Save Street Data
+         * */
         private void save_Click(object sender, EventArgs e)
         {
             /////////////////////////Add Street in database/////////////////////////////

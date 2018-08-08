@@ -127,12 +127,6 @@
     <Compile Include="PL\AddStreetForm.Designer.cs">
       <DependentUpon>AddStreetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Ahmed.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\Ahmed.Designer.cs">
-      <DependentUpon>Ahmed.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,9 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\AddStreetForm.resx">
       <DependentUpon>AddStreetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\Ahmed.resx">
-      <DependentUpon>Ahmed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -39,7 +39,6 @@ namespace Traffic
             {
                 this.Theme = MetroThemeStyle.Dark;
                 AddStreet.Theme = MetroThemeStyle.Dark;
-                UpdateStreet.Theme = MetroThemeStyle.Dark;
                 Settings.Theme = MetroThemeStyle.Dark;
                 connected.Theme = MetroThemeStyle.Dark;
                 progress.Theme = MetroThemeStyle.Dark;
@@ -50,7 +49,6 @@ namespace Traffic
             {
                 this.Theme = MetroThemeStyle.Light;
                 AddStreet.Theme = MetroThemeStyle.Light;
-                UpdateStreet.Theme = MetroThemeStyle.Light;
                 Settings.Theme = MetroThemeStyle.Light;
                 connected.Theme = MetroThemeStyle.Light;
                 progress.Theme = MetroThemeStyle.Light;
@@ -63,6 +61,9 @@ namespace Traffic
             
         }
 
+        /*
+         * Add Street Button
+         * */
         private void metroTile3_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
@@ -84,6 +85,9 @@ namespace Traffic
             
         }
 
+        /**
+         * Show Settings Form
+         * */
         private void metroTile4_Click(object sender, EventArgs e)
         {
             SettingForm settingForm = new SettingForm();

@@ -86,7 +86,6 @@ E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.Linq.dll
 E:\Projects\Traffic\Traffic\bin\Debug\Newtonsoft.Json.xml
 E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.xml
 E:\Projects\Traffic\Traffic\bin\Debug\System.Data.SQLite.dll.config
-E:\Projects\Traffic\Traffic\obj\Debug\Traffic.PL.Ahmed.resources
 F:\Traffic\Traffic\bin\Debug\AjaxMin.dll
 F:\Traffic\Traffic\bin\Debug\GMap.NET.Core.dll
 F:\Traffic\Traffic\bin\Debug\GMap.NET.WindowsForms.dll

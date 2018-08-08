@@ -75,11 +75,17 @@ namespace Traffic
             }
         }
 
+        /**
+         * Close Settings
+         * */
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /**
+         * Save Settings
+         * */
         private void save_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.ServerName = sname.Text;
