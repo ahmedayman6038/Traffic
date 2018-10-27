@@ -119,7 +119,7 @@ namespace Traffic.PL
             {
                 AddPointsProgressForm.AllPoints[rows].street = st;
                 Point2 point2 = new Point2();
-                point2.id= AddPointsProgressForm.AllPoints[rows].id;
+                point2.id= AddPointsProgressForm.AllPoints[rows].Getid();
                 point2.lat= AddPointsProgressForm.AllPoints[rows].lat;
                 point2.lon= AddPointsProgressForm.AllPoints[rows].lon;
                 point2.name= AddPointsProgressForm.AllPoints[rows].name;
